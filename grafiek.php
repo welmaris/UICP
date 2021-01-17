@@ -3,7 +3,7 @@
 <body>
 
 <?php
-echo "Grafiek";
+echo "Grafiek eyo";
 ?>
 
 </body>
