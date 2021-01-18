@@ -9,27 +9,22 @@ session_start();
 </head>
 
 <body>
-    <div class="wrapper">
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
-        </form>
-    </div>    
-</body>
-</html>
+<header>
+	<?php echo printheader("Inloggen") ?>
+</header>
+
+<h1>Inloggen</h1>
+
+<div>
+	<table>
+		<form action="" method="post" >
+			<tr><td><label for="email">Email:</label></td><td><input type="email" name="email" id="email" required></td></tr>
+			<tr><td><label for="password">Password: </label></td><td><input type="password" name="password" id="password" required></td></tr>
+			<tr><td></td><td><input type="submit" name="login" value="Log in"></td></tr>
+		</form>
+		<tr><td>Wachtwoord Vergeten? </td><td><a href="wachtwoord_ophalen.php">Klik hier!</a></p></td></tr>
+	</table>
+</div>
 
 <?php 
 // Check if the user is already logged in, if yes then redirect him to welcome page
@@ -115,3 +110,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
  
+</body>
+</html>
