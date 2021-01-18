@@ -1,15 +1,67 @@
 <?php
-// Initialize the session
+require("config.php");
 session_start();
- 
+?>
+
+<html>
+<style>
+
+body {
+	background-color: white;
+}
+
+h1 {
+	text-align: center;
+	position: relative;
+	top: 30px;
+	border: 3px solid black;
+	
+}
+
+div {
+	text-align:right;
+	float: center;
+	width: 100px;
+	height: 100px;
+	
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+}
+</style>
+
+<head>
+	<title>Login</title>
+</head>
+<body>
+<header>
+	<?php echo printheader("Login") ?>
+</header>
+
+<h1>Login</h1>
+
+<div>
+	<table>
+		<form action="" method="post" >
+			<tr><td><label for="email">Emailaddress:</label></td><td><input type="email" name="email" id="email" required></td></tr>
+			<tr><td><label for="password">Password: </label></td><td><input type="password" name="password" id="password" required></td></tr>
+			<tr><td></td><td><input type="submit" name="login" value="Log in"></td></tr>
+		</form>
+		<tr><td>Forgotten password? </td><td><a href="forgotten_password.php">Klik hier!</a></p></td></tr>
+	</table>
+</div>
+
+
+<?php
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if(isset($_POST["loggedin"]) && $_POST["loggedin"] === true){
     header("location: welcome.php");
     exit;
 }
- 
-// Include config file
-require_once "config.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -87,38 +139,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-        </form>
-    </div>    
-</body>
-</html>
