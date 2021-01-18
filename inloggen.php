@@ -5,21 +5,21 @@ session_start();
 ?>
 
 <head>
-	<title>Inloggen</title>
+	<title>Login</title>
 </head>
 
 <body>
 
-<h1>Inloggen</h1>
+<h1>Login</h1>
 
 <div>
 	<table>
 		<form action="" method="post" >
-			<tr><td><label for="email">Email:</label></td><td><input type="email" name="email" id="email" required></td></tr>
+			<tr><td><label for="email">Email address:</label></td><td><input type="email" name="email" id="email" required></td></tr>
 			<tr><td><label for="password">Password: </label></td><td><input type="password" name="password" id="password" required></td></tr>
 			<tr><td></td><td><input type="submit" name="login" value="Log in"></td></tr>
 		</form>
-		<tr><td>Forgotten password? </td><td><a href="forgotten_password.php">Klik hier!</a></p></td></tr>
+		<tr><td>Reset password </td><td><a href="reset_password.php"> Press here</a></p></td></tr>
 	</table>
 </div>
 

@@ -4,11 +4,12 @@
 <body>
 
 <div>
+    <p>Please fill out this form to reset your password.</p>
 	<form action="" method="post">
 		<table>
-			<tr><td><label for="wachtwoord">Nieuw Wachtwoord:</label></td><td><input type="password" name="wachtwoord" id="wachtwoord" ></td></tr>
-			<tr><td><label for="herhaling">Herhaal Wachtwoord:</td><td><input type="password" name="herhaling" id="herhaling"></td></tr>
-			<tr><td></td><td><input type="submit" name="ww_wijzigen" value="Wijzig"></td></tr>
+			<tr><td><label for="password">New password:</label></td><td><input type="password" name="password" id="password" ></td></tr>
+			<tr><td><label for="confirmation">Confirm password:</td><td><input type="password" name="confirmation" id="confirmation"></td></tr>
+			<tr><td></td><td><input type="submit" name="Reset password" value="Reset"></td></tr>
 		</table>
 	</form>
 </div>
