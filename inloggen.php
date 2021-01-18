@@ -19,7 +19,7 @@ session_start();
 			<tr><td><label for="password">Password: </label></td><td><input type="password" name="password" id="password" required></td></tr>
 			<tr><td></td><td><input type="submit" name="login" value="Log in"></td></tr>
 		</form>
-		<tr><td>Wachtwoord Vergeten? </td><td><a href="wachtwoord_ophalen.php">Klik hier!</a></p></td></tr>
+		<tr><td>Forgotten password? </td><td><a href="forgotten_password.php">Klik hier!</a></p></td></tr>
 	</table>
 </div>
 
