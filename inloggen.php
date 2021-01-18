@@ -1,71 +1,124 @@
-<!doctype html>
 <?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: welcome.php");
+    exit;
+}
+ 
+// Include config file
+require_once "config.php";
+ 
+// Define variables and initialize with empty values
+$username = $password = "";
+$username_err = $password_err = "";
+ 
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Check if username is empty
+    if(empty(trim($_POST["username"]))){
+        $username_err = "Please enter username.";
+    } else{
+        $username = trim($_POST["username"]);
+    }
+    
+    // Check if password is empty
+    if(empty(trim($_POST["password"]))){
+        $password_err = "Please enter your password.";
+    } else{
+        $password = trim($_POST["password"]);
+    }
+    
+    // Validate credentials
+    if(empty($username_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            
+            // Set parameters
+            $param_username = $username;
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Store result
+                mysqli_stmt_store_result($stmt);
+                
+                // Check if username exists, if yes then verify password
+                if(mysqli_stmt_num_rows($stmt) == 1){                    
+                    // Bind result variables
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    if(mysqli_stmt_fetch($stmt)){
+                        if(password_verify($password, $hashed_password)){
+                            // Password is correct, so start a new session
+                            session_start();
+                            
+                            // Store data in session variables
+                            $_SESSION["loggedin"] = true;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["username"] = $username;                            
+                            
+                            // Redirect user to welcome page
+                            header("location: welcome.php");
+                        } else{
+                            // Display an error message if password is not valid
+                            $password_err = "The password you entered was not valid.";
+                        }
+                    }
+                } else{
+                    // Display an error message if username doesn't exist
+                    $username_err = "No account found with that username.";
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
 
-//require("");
-//require("");
-//require("");
-
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
+    
+    // Close connection
+    mysqli_close($link);
+}
 ?>
-</style>
+ 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Inloggen</title>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+    </style>
 </head>
 <body>
-<header>
-	<?php echo printheader("Inloggen") ?>
-</header>
-
-<h1>Inloggen</h1>
-
-<div>
-	<table>
-		<form action="" method="post" >
-			<tr><td><label for="email">Emailadres:</label></td><td><input type="email" name="email" id="email" required></td></tr>
-			<tr><td><label for="wachtwoord">Wachtwoord: </label></td><td><input type="password" name="wachtwoord" id="wachtwoord" required></td></tr>
-			<tr><td></td><td><input type="submit" name="login" value="Log in"></td></tr>
-		</form>
-		<tr><td><p> Nog geen account? </td><td><a href="registreren.php">Registreren<a><br></td></tr>
-		<tr><td>Wachtwoord Vergeten? </td><td><a href="wachtwoord_ophalen.php">Klik hier!</a></p></td></tr>
-	</table>
-</div>
-
-<?php
-	
-	If(isset($_POST["login"]) && isset($_POST["wachtwoord"]) && isset($_POST["email"])){
-		$email_check = check_email($_POST["email"]);
-
-		
-		if ($email_check == FALSE){
-			$message = "U moet een correct emailadres invoeren!";
-		} elseif($_POST["wachtwoord"] == FALSE){
-			$message = "U moet een wachtwoord invoeren";
-		} else {
-			$email = $_POST["email"];
-			$wachtwoord = $_POST["wachtwoord"];
-			$con = database_connect();
-			
-			$query = 	"SELECT email
-						FROM Klant
-						WHERE email = '$email'
-						AND wachtwoord_md5 = '$wachtwoord'
-						";
-			if($query != FALSE){
-				$_SESSION["user"] = $email;
-				$_SESSION["wachtwoord"] = $wachtwoord;
-				header("location: klant_pagina.php", TRUE, 301);
-				exit();
-			} else {
-				$message = "Uw wachtwoord en login komen niet overeen.<br>Probeer opnieuw of klik op wachtwoord vergeten";
-			}
-			return $message;
-		}
-		echo $message;
-		
-	}
-
-?>	
-<footer>
-	<?php //echo printfooter("Inloggen") ?>
-</footer>
+    <div class="wrapper">
+        <h2>Login</h2>
+        <p>Please fill in your credentials to login.</p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                <span class="help-block"><?php echo $username_err; ?></span>
+            </div>    
+            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control">
+                <span class="help-block"><?php echo $password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+        </form>
+    </div>    
 </body>
 </html>
