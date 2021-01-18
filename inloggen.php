@@ -9,9 +9,6 @@ session_start();
 </head>
 
 <body>
-<header>
-	<?php echo printheader("Inloggen") ?>
-</header>
 
 <h1>Inloggen</h1>
 
