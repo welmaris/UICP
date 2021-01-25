@@ -1,6 +1,9 @@
 <?php
-// Get the contents of the JSON file 
+//Open json
 $strJsonFileContents = file_get_contents("../data.json");
-var_dump($strJsonFileContents); // show contents
+
+//json to array
+$array = json_decode($strJsonFileContents);
+var_dump($array);
 
 ?>
