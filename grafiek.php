@@ -1,9 +1,10 @@
 <?php
+
 //Open json
-$strJsonFileContents = file_get_contents("../data.json");
+$jsonfile = file_get_contents("../data.json");
 
 //json to array
-$array = json_decode($strJsonFileContents);
-echo($array);
+$array = json_decode($jsonfile);
+var_dump($array[0]);
 
 ?>
