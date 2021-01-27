@@ -953,7 +953,7 @@
         
         <!-- 2 ON THE SAME LOCATION-->    
 
-        <ellipse
+        <!-- <ellipse
             style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
             id="New_Delhi_Palam"
             class="421820"
@@ -964,6 +964,7 @@
             ry="18.977745"
             inkscape:transform-center-y="-23.55737 "
         />
+         -->
         <ellipse
             style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
             id="New_Delhi_Safdarjun"
