@@ -796,305 +796,360 @@
 
     <g inkscape:groupmode="layer" id="layer9" inkscape:label="Weather Stations" style="display:inline" sodipodi:insensitive="true">
         
-        <ellipse
-            class="Jiwani"
-            id="417560"
-            title="Jiwani, Pakistan"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="174.13145"
-            cy="1635.7802"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-        <ellipse
-            class="Karachi"
-            id="417800"
-            title="Karachi Airport, Pakistan"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="759.84631"
-            cy="1680.6321"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
+        <a xlink:title="Jiwani, Pakistan" xlink:href="">
+            <ellipse
+                class="Jiwani"
+                id="417560"
+                title="Jiwani, Pakistan"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="174.13145"
+                cy="1635.7802"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
 
-        <ellipse
-            class="Nawabshah"
-            id="417490"
-            title="Nawabshah, Pakistan"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="936.61603"
-            cy="1522.3308"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
+        <a xlink:title="Karachi Airport, Pakistan" xlink:href="">
+            <ellipse
+                class="Karachi"
+                id="417800"
+                title="Karachi Airport, Pakistan"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="759.84631"
+                cy="1680.6321"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
 
-        <ellipse
-            class="Lahore"
-            id="416410"
-            title="Lahore Airport, Pakistan"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="1643.6952"
-            cy="788.86829"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
+        <a xlink:title="Nawabshah, Pakistan" xlink:href="">
+            <ellipse
+                class="Nawabshah"
+                id="417490"
+                title="Nawabshah, Pakistan"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="936.61603"
+                cy="1522.3308"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
 
-        <ellipse
-            class="Islamabad"
-            id="415710"
-            title="Islamabad Airport, Pakistan"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="1488.0322"
-            cy="488.0957"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            class="Peshawar"
-            id="415300"
-            title="Peshawar, Pakistan"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="1371.9447"
-            cy="319.24094"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            class="Iranshahr"
-            id="408790"
-            title="Iranshahr, Iran"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="58.043823"
-            cy="1393.0514"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
+        <a xlink:title="Lahore Airport, Pakistan" xlink:href="">
+            <ellipse
+                class="Lahore"
+                id="416410"
+                title="Lahore Airport, Pakistan"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="1643.6952"
+                cy="788.86829"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
         
-        <ellipse
-            class="Zahedan"
-            id="408560"
-            title="Zahedan, Iran"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="47.490391"
-            cy="1068.5338"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            class="Kabul"
-            id="409480"
-            title="Kabul Airport, Afghanistan"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="1048.4664"
-            cy="373.11975"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            class="Jaipur_Sanganer"
-            id="423480"
-            title="Jaipur/Sanganer, India"
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            cx="1802.1683"
-            cy="1425.3175"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Jodhpur"
-            id="423390"
-            title="Jodhpur, India"
-            cx="1410.3927"
-            cy="1477.5542"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Jaisalmer"
-            id="423280"
-            title="Jaisalmer, India"
-            cx="1216.3704"
-            cy="1406.6615"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
+        <a xlink:title="Islamabad Airport, Pakistan" xlink:href="">
+            <ellipse
+                class="Islamabad"
+                id="415710"
+                title="Islamabad Airport, Pakistan"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="1488.0322"
+                cy="488.0957"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
         
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Agra"
-            id="422600"
-            title="Agra, India"
-            cx="2027.243"
-            cy="1293.5551"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
+        <a xlink:title="Peshawar, Pakistan" xlink:href="">
+            <ellipse
+                class="Peshawar"
+                id="415300"
+                title="Peshawar, Pakistan"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="1371.9447"
+                cy="319.24094"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Iranshahr, Iran" xlink:href="">
+            <ellipse
+                class="Iranshahr"
+                id="408790"
+                title="Iranshahr, Iran"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="58.043823"
+                cy="1393.0514"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Zahedan, Iran" xlink:href="">
+            <ellipse
+                class="Zahedan"
+                id="408560"
+                title="Zahedan, Iran"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="47.490391"
+                cy="1068.5338"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Kabul Airport, Afghanistan" xlink:href="">
+            <ellipse
+                class="Kabul"
+                id="409480"
+                title="Kabul Airport, Afghanistan"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="1048.4664"
+                cy="373.11975"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Jaipur/Sanganer, India" xlink:href="">
+            <ellipse
+                class="Jaipur_Sanganer"
+                id="423480"
+                title="Jaipur/Sanganer, India"
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                cx="1802.1683"
+                cy="1425.3175"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Jodhpur, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Jodhpur"
+                id="423390"
+                title="Jodhpur, India"
+                cx="1410.3927"
+                cy="1477.5542"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Jaisalmer, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Jaisalmer"
+                id="423280"
+                title="Jaisalmer, India"
+                cx="1216.3704"
+                cy="1406.6615"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Agra, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Agra"
+                id="422600"
+                title="Agra, India"
+                cx="2027.243"
+                cy="1293.5551"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
         
         <!-- 2 ON THE SAME LOCATION-->    
 
-        <!-- <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="New_Delhi_Palam"
-            id="421820"
-            title="New_Delhi/Palam, India"
-            cx="1943.5012"
-            cy="1175.3271"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-         -->
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="New_Delhi_Safdarjun"
-            id="421810"
-            title="New Delhi/Safdarjun, India"
-            cx="1943.5012"
-            cy="1175.3271"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
+        <!-- 
+        <a xlink:title="New_Delhi/Palam, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="New_Delhi_Palam"
+                id="421820"
+                title="New_Delhi/Palam, India"
+                cx="1943.5012"
+                cy="1175.3271"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        -->   
 
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Bikaner"
-            id="421650"
-            title="Bikaner, India"
-            cx="1514.8662"
-            cy="1279.8008"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
+        <a xlink:title="New Delhi/Safdarjun, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="New_Delhi_Safdarjun"
+                id="421810"
+                title="New Delhi/Safdarjun, India"
+                cx="1943.5012"
+                cy="1175.3271"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Bikaner, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Bikaner"
+                id="421650"
+                title="Bikaner, India"
+                cx="1514.8662"
+                cy="1279.8008"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Hissar, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Hissar"
+                id="421310"
+                title="Hissar, India"
+                cx="1779.7812"
+                cy="1125.7676"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Dehradun, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Dehradun"
+                id="421110"
+                title="Dehradun, India"
+                cx="2089.4705"
+                cy="962.64893"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Amritsar, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Amritsar"
+                id="420710"
+                title="Amritsar, India"
+                cx="1706.8903"
+                cy="763.80267"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Kota Aerodrome, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Kota"
+                id="424520"
+                title="Kota Aerodrome, India"
+                cx="1807.2732"
+                cy="1646.3336"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Guna, India" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Guna"
+                id="425590"
+                title="Guna, India"
+                cx="1949.7444"
+                cy="1696.4623"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Saragt, Turkmenistan" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Saragt"
+                id="389740"
+                title="Saragt, Turkmenistan"
+                cx="123.12951"
+                cy="89.548737"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Gyshgy, Turkmenistan" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Gyshgy"
+                id="389870"
+                title="Gyshgy, Turkmenistan"
+                cx="222.00624"
+                cy="247.19183"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
+        <a xlink:title="Pishan, China" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Pishan"
+                id="518180"
+                title="Pishan, China"
+                cx="2005.1499"
+                cy="23.745195"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
         />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Hissar"
-            id="421310"
-            title="Hissar, India"
-            cx="1779.7812"
-            cy="1125.7676"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Dehradun"
-            id="421110"
-            title="Dehradun, India"
-            cx="2089.4705"
-            cy="962.64893"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Amritsar"
-            id="420710"
-            title="Amritsar, India"
-            cx="1706.8903"
-            cy="763.80267"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Kota"
-            id="424520"
-            title="Kota Aerodrome, India"
-            cx="1807.2732"
-            cy="1646.3336"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Guna"
-            id="425590"
-            title="Guna, India"
-            cx="1949.7444"
-            cy="1696.4623"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Saragt"
-            id="389740"
-            title="Saragt, Turkmenistan"
-            cx="123.12951"
-            cy="89.548737"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Gyshgy"
-            id="389870"
-            title="Gyshgy, Turkmenistan"
-            cx="222.00624"
-            cy="247.19183"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Pishan"
-            id="518180"
-            title="Pishan, China"
-            cx="2005.1499"
-            cy="23.745195"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
-
-        <ellipse
-            style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-            class="Hotan"
-            id="518280"
-            title="Hotan, China"
-            cx="2294.6865"
-            cy="41.043179"
-            rx="20.227745"
-            ry="18.977745"
-            inkscape:transform-center-y="-23.55737 "
-        />
+        </a>
+        
+        <a xlink:title="Hotan, China" xlink:href="">
+            <ellipse
+                style="fill:#2e3192;fill-opacity:1;stroke:#2e3192;stroke-width:13.545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.8637;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+                class="Hotan"
+                id="518280"
+                title="Hotan, China"
+                cx="2294.6865"
+                cy="41.043179"
+                rx="20.227745"
+                ry="18.977745"
+                inkscape:transform-center-y="-23.55737 "
+            />
+        </a>
+        
     </g>
 </svg>
