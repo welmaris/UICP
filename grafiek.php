@@ -57,9 +57,9 @@ function JsonToTable($data){
         echo '</tr>';
         $isHeaderGenerated = 1;
       }
-      
+
       //rows
-      echo '<tr>'; /
+      echo '<tr>'; 
       foreach($datapunten as $key => $value ){
         echo '<td>'.$value.'</td>';
       }
