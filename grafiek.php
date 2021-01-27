@@ -2,11 +2,11 @@
 <html>
 <head>
 <style>
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-
 }
 
 td, th {
@@ -39,20 +39,35 @@ $array = json_decode($jsonfile, true);
 foreach($array as $value){
     $result[$value["STN"]][]=$value;
 }
-
-echo '<pre>'; print_r($result); echo '</pre>'; //print $result
+//echo '<pre>'; print_r($result); echo '</pre>'; //print $result
 
 //Making a table from the array
-echo '<table border="1">';
-echo '<tr><th>STN</th><th>DATE</th></th><th>TIME</th></th><th>?</th><th>STN</th><th>DATE</th></th><th>TIME</th></th><th>?</th><th>STN</th><th>DATE</th></th><th>TIME</th></th><th>?</th><th>STN</th><th>DATE</th></th></tr>';
-foreach( $result as $value2 ){
-    foreach($value2 as $value3){
+function JsonToTable($data){
+  echo '<table border="1">';
+  $isHeaderGenerated = 0;
+
+  foreach($data as $STN ){
+    foreach($STN as $datapunten){
+      //header
+      if($isHeaderGenerated == 0){
         echo '<tr>';
-        foreach($value3 as $key ){
-            echo '<td>'.$key.'</td>';
+        foreach(array_keys($datapunten) as $key){ 
+          echo "<th>".$key."</th>";
         }
+        echo '</tr>';
+        $isHeaderGenerated = 1;
       }
-    echo '</tr>';
+      
+      //rows
+      echo '<tr>'; /
+      foreach($datapunten as $key => $value ){
+        echo '<td>'.$value.'</td>';
+      }
+      echo '</tr>';
+    }
+  }
+  echo '</table>';
 }
-echo '</table>';
+
+JsonToTable($result);
 ?>
