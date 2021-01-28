@@ -14,8 +14,6 @@
         </article>
 
         <div id="hover">
-            <!-- <h2>Hover Status:</h2>
-            <div class="status">&nbsp;</div> -->
             <h2 class="station">&nbsp;</h2>
             <div class="data">&nbsp;</div>
         </div>
@@ -23,44 +21,44 @@
         <script>
             // Put the data to be printed here (currently station nr, full name, country)
             var xlsData = {
-                "Jiwani":"417560, Jiwani, Pakistan",
-                "Karachi":"417800, Karachi Airport, Pakistan",
-                "Nawabshah":"417490, Nawabshah, Pakistan",
-                "Lahore":"416410, Lahore Airport, Pakistan",
-                "Islamabad":"415710, islamabad Airport, Pakistan",
-                "Peshawar":"415300, Peshawar, Pakistan",
+                "417560":"417560, Jiwani, Pakistan",
+                "417800":"417800, Karachi Airport, Pakistan",
+                "417490":"417490, Nawabshah, Pakistan",
+                "416410":"416410, Lahore Airport, Pakistan",
+                "415710":"415710, islamabad Airport, Pakistan",
+                "415300":"415300, Peshawar, Pakistan",
 
-                "Iranshahr":"408790, Iranshahr, Iran",
-                "Zahedan":"408560, Zahedan, Iran",
+                "408790":"408790, Iranshahr, Iran",
+                "408560":"408560, Zahedan, Iran",
 
-                "Kabul":"409480, Kabul Airport, Afghanistan",
+                "409480":"409480, Kabul Airport, Afghanistan",
 
-                "Jaipur_Sanganer":"423480, Jaipur/Sanganer, India",
-                "Jodhpur":"423390, Jodhpur, India",
-                "Jaisalmer":"423280, Jaisalmer, India",
-                "Agra":"422600, Agra, India",
-                "New_Delhi_Palam":"421820, New_Delhi/Palam, India",
-                "New_Delhi_Safdarjun":"421810, New Delhi/Safdarjun, India",
-                "Bikaner":"421650, Bikaner, India",
-                "Hissar":"421310, Hissar, India",
-                "Dehradun":"421110, Dehradun, India",
-                "Amritsar":"420710, Amritsar, India",
-                "Kota":"424520, Kota Aerodrome, India",
-                "Guna":"425590, Guna, India",
+                "423480":"423480, Jaipur/Sanganer, India",
+                "423390":"423390, Jodhpur, India",
+                "423280":"423280, Jaisalmer, India",
+                "422600":"422600, Agra, India",
+                "421820":"421820, New_Delhi/Palam, India",
+                "421810":"421810, New Delhi/Safdarjun, India",
+                "421650":"421650, Bikaner, India",
+                "421310":"421310, Hissar, India",
+                "421110":"421110, Dehradun, India",
+                "420710":"420710, Amritsar, India",
+                "424520":"424520, Kota Aerodrome, India",
+                "425590":"425590, Guna, India",
 
-                "Saragt":"389740, Saragt, Turkmenistan",
-                "Gyshgy":"389870, Gyshgy, Turkmenistan",
+                "389740":"389740, Saragt, Turkmenistan",
+                "389870":"389870, Gyshgy, Turkmenistan",
                 
-                "Pishan":"518180, Pishan, China",
-                "Hotan":"518280, Hotan, China",
+                "518180":"518180, Pishan, China",
+                "518280":"518280, Hotan, China",
             }
 
             $('object')[0].addEventListener('load', function() {
 
-                $('#Jiwani', this.contentDocument).on({
+                $('.417560', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Jiwani']);
-                        $('#hover .data').text('#svg #Jiwani Mouse Enter');
+                        $('#hover .station').text(xlsData['417560']);
+                        $('#hover .data').text('#svg .Jiwani Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -68,10 +66,10 @@
                     }
                 });
 
-                $('#Karachi', this.contentDocument).on({
+                $('.417800', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Karachi']);
-                        $('#hover .data').text('#svg #Karachi Mouse Enter');
+                        $('#hover .station').text(xlsData['417800']);
+                        $('#hover .data').text('#svg .Karachi Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -79,10 +77,10 @@
                     }
                 });
 
-                $('#Nawabshah', this.contentDocument).on({
+                $('.417490', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Nawabshah']);
-                        $('#hover .data').text('#svg #Nawabshah Mouse Enter');
+                        $('#hover .station').text(xlsData['417490']);
+                        $('#hover .data').text('#svg .Nawabshah Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -90,10 +88,10 @@
                     }
                 });
 
-                $('#Lahore', this.contentDocument).on({
+                $('.416410', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Lahore']);
-                        $('#hover .data').text('#svg #Lahore Mouse Enter');
+                        $('#hover .station').text(xlsData['416410']);
+                        $('#hover .data').text('#svg .Lahore Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -101,10 +99,10 @@
                     }
                 });
 
-                $('#Islamabad', this.contentDocument).on({
+                $('.415710', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Islamabad']);
-                        $('#hover .data').text('#svg #Islamabad Mouse Enter');
+                        $('#hover .station').text(xlsData['415710']);
+                        $('#hover .data').text('#svg .Islamabad Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -112,10 +110,10 @@
                     }
                 });
 
-                $('#Peshawar', this.contentDocument).on({
+                $('.415300', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Peshawar']);
-                        $('#hover .data').text('#svg #Peshawar Mouse Enter');
+                        $('#hover .station').text(xlsData['415300']);
+                        $('#hover .data').text('#svg .Peshawar Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -123,10 +121,10 @@
                     }
                 });
 
-                $('#Iranshahr', this.contentDocument).on({
+                $('.408790', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Iranshahr']);
-                        $('#hover .data').text('#svg #Iranshahr Mouse Enter');
+                        $('#hover .station').text(xlsData['408790']);
+                        $('#hover .data').text('#svg .Iranshahr Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -134,10 +132,10 @@
                     }
                 });
 
-                $('#Zahedan', this.contentDocument).on({
+                $('.408560', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Zahedan']);
-                        $('#hover .data').text('#svg #Zahedan Mouse Enter');
+                        $('#hover .station').text(xlsData['408560']);
+                        $('#hover .data').text('#svg .Zahedan Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -145,10 +143,10 @@
                     }
                 });
 
-                $('#Kabul', this.contentDocument).on({
+                $('.409480', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Kabul']);
-                        $('#hover .data').text('#svg #Kabul Mouse Enter');
+                        $('#hover .station').text(xlsData['409480']);
+                        $('#hover .data').text('#svg .Kabul Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -156,10 +154,10 @@
                     }
                 });
 
-                $('#Jaipur_Sanganer', this.contentDocument).on({
+                $('.423480', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Jaipur_Sanganer']);
-                        $('#hover .data').text('#svg #Jaipur_Sanganer Mouse Enter');
+                        $('#hover .station').text(xlsData['423480']);
+                        $('#hover .data').text('#svg .Jaipur_Sanganer Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -167,10 +165,10 @@
                     }
                 });
 
-                $('#Jodhpur', this.contentDocument).on({
+                $('.423390', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Jodhpur']);
-                        $('#hover .data').text('#svg #Jodhpur Mouse Enter');
+                        $('#hover .station').text(xlsData['423390']);
+                        $('#hover .data').text('#svg .Jodhpur Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -178,10 +176,10 @@
                     }
                 });
 
-                $('#Jaisalmer', this.contentDocument).on({
+                $('.423280', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Jaisalmer']);
-                        $('#hover .data').text('#svg #Jaisalmer Mouse Enter');
+                        $('#hover .station').text(xlsData['423280']);
+                        $('#hover .data').text('#svg .Jaisalmer Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -189,10 +187,10 @@
                     }
                 });
 
-                $('#Agra', this.contentDocument).on({
+                $('.422600', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Agra']);
-                        $('#hover .data').text('#svg #Agra Mouse Enter');
+                        $('#hover .station').text(xlsData['422600']);
+                        $('#hover .data').text('#svg .Agra Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -202,10 +200,10 @@
 
                 // THIS ONE IS NOT SHOWN WHEN BOTH NEW_DELHI'S ARE USED (CHOSE WHICH ONE TO REMOVE!!!!
 
-                // $('#New_Delhi_Palam', this.contentDocument).on({
+                // $('.421820', this.contentDocument).on({
                 //     'mouseenter': function() {
-                //         $('#hover .station').text(xlsData['New_Delhi_Palam']);
-                //         $('#hover .data').text('#svg #New_Delhi_Palam Mouse Enter');
+                //         $('#hover .station').text(xlsData['421820']);
+                //         $('#hover .data').text('#svg .New_Delhi_Palam Mouse Enter');
                 //     },
                 //     'mouseleave': function() {
                 //         $('#hover .station').html('&nbsp;');
@@ -213,10 +211,10 @@
                 //     }
                 // });
 
-                $('#New_Delhi_Safdarjun', this.contentDocument).on({
+                $('.421810', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['New_Delhi_Safdarjun']);
-                        $('#hover .data').text('#svg #New_Delhi_Safdarjun Mouse Enter');
+                        $('#hover .station').text(xlsData['421810']);
+                        $('#hover .data').text('#svg .New_Delhi_Safdarjun Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -224,10 +222,10 @@
                     }
                 });
 
-                $('#Bikaner', this.contentDocument).on({
+                $('.421650', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Bikaner']);
-                        $('#hover .data').text('#svg #Bikaner Mouse Enter');
+                        $('#hover .station').text(xlsData['421650']);
+                        $('#hover .data').text('#svg .Bikaner Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -235,10 +233,10 @@
                     }
                 });
 
-                $('#Hissar', this.contentDocument).on({
+                $('.421310', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Hissar']);
-                        $('#hover .data').text('#svg #Hissar Mouse Enter');
+                        $('#hover .station').text(xlsData['421310']);
+                        $('#hover .data').text('#svg .Hissar Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -246,10 +244,10 @@
                     }
                 });
 
-                $('#Dehradun', this.contentDocument).on({
+                $('.421110', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Dehradun']);
-                        $('#hover .data').text('#svg #Dehradun Mouse Enter');
+                        $('#hover .station').text(xlsData['421110']);
+                        $('#hover .data').text('#svg .Dehradun Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -257,10 +255,10 @@
                     }
                 });
 
-                $('#Amritsar', this.contentDocument).on({
+                $('.420710', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Amritsar']);
-                        $('#hover .data').text('#svg #Amritsar Mouse Enter');
+                        $('#hover .station').text(xlsData['420710']);
+                        $('#hover .data').text('#svg .Amritsar Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -268,10 +266,10 @@
                     }
                 });
 
-                $('#Kota', this.contentDocument).on({
+                $('.424520', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Kota']);
-                        $('#hover .data').text('#svg #Kota Mouse Enter');
+                        $('#hover .station').text(xlsData['424520']);
+                        $('#hover .data').text('#svg .Kota Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -279,10 +277,10 @@
                     }
                 });
 
-                $('#Guna', this.contentDocument).on({
+                $('.425590', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Guna']);
-                        $('#hover .data').text('#svg #Guna Mouse Enter');
+                        $('#hover .station').text(xlsData['425590']);
+                        $('#hover .data').text('#svg .Guna Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -290,10 +288,10 @@
                     }
                 });
 
-                $('#Saragt', this.contentDocument).on({
+                $('.389740', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Saragt']);
-                        $('#hover .data').text('#svg #Saragt Mouse Enter');
+                        $('#hover .station').text(xlsData['389740']);
+                        $('#hover .data').text('#svg .Saragt Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -301,10 +299,10 @@
                     }
                 });
 
-                $('#Gyshgy', this.contentDocument).on({
+                $('.389870', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Gyshgy']);
-                        $('#hover .data').text('#svg #Gyshgy Mouse Enter');
+                        $('#hover .station').text(xlsData['389870']);
+                        $('#hover .data').text('#svg .Gyshgy Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -312,10 +310,10 @@
                     }
                 });
 
-                $('#Pishan', this.contentDocument).on({
+                $('.518180', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Pishan']);
-                        $('#hover .data').text('#svg #Pishan Mouse Enter');
+                        $('#hover .station').text(xlsData['518180']);
+                        $('#hover .data').text('#svg .Pishan Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
@@ -323,10 +321,10 @@
                     }
                 });
 
-                $('#Hotan', this.contentDocument).on({
+                $('.518280', this.contentDocument).on({
                     'mouseenter': function() {
-                        $('#hover .station').text(xlsData['Hotan']);
-                        $('#hover .data').text('#svg #Hotan Mouse Enter');
+                        $('#hover .station').text(xlsData['518280']);
+                        $('#hover .data').text('#svg .Hotan Mouse Enter');
                     // },
                     // 'mouseleave': function() {
                     //     $('#hover .station').html('&nbsp;');
