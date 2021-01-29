@@ -6,27 +6,83 @@
 	$dbConnection = databaseConnect(); // Connect to the database
 ?>
 
+<htmL>
+<style>
+body {background-color: #f7f8fc;}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+input[type=text] {
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input[type=submit] {
+    background-color: #f07120;
+  color: white;
+  font-weight : bold;
+  font-size : 16px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+img.avatar {
+  width: 50%;
+}
+
+.content {
+  max-width: 400;
+  margin: auto;
+  margin-top: 80px;
+  border-radius: 5px;
+  background-color: #1A2364;
+  padding: 20px;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.message{
+
+
+}
+</style>
+
 <head>
 	<title>Login</title>
 </head>
 
 <body>
-<h1>Login</h1>
-
-<div>
-	<table>
-		<form action="" method="post" >
-			<tr><td><label for="email">Email address:</label></td><td><input type="email" name="email" id="email" required></td></tr>
-			<tr><td><label for="password">Password: </label></td><td><input type="password" name="password" id="password" required></td></tr>
-			<tr><td></td><td><input type="submit" name="login" value="Log in"></td></tr>
-		</form>
-	</table>
-</div>
-
-<b></br>Contact the administrator if you want to reset your password</b>
+    <form id="login" action="" method="post">
+        <div class="content">
+            <div class="imgcontainer">
+                <img src="UIC.png" alt="Avatar" class="avatar">
+            </div>
+		    <input type="text" name="email" placeholder="Email address" id="email" required>
+		    <input type="text" name="password" placeholder="Password" id="password" required>
+            <input type="submit" name="login" value="Log in">
+        </div>
+</form>
 
 <?php
-
+$message="";
 
 If(isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"])){
     
@@ -57,11 +113,11 @@ If(isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"])
         if(mysqli_num_rows($result_set) == 1 ){
             $_SESSION["email"] = $email;
             $_SESSION["password"] = $password;
-            header("location: pakistan.html", TRUE, 301);
+            header("location: welcome.php", TRUE, 301);
             exit();
         } else {
-            //$message = "Uw password en login komen niet overeen.<br>Probeer opnieuw of klik op wachtwoord vergeten";
-            //echo $message;
+            $message = "Username and/or password incorrect, try again.";
+            echo $message;
         }
     }
 }
