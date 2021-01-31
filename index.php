@@ -24,6 +24,7 @@ input[type=text] {
   border: 1px solid #ccc;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  border-radius: 4px;
 }
 input[type=submit] {
     background-color: #f07120;
@@ -35,6 +36,7 @@ input[type=submit] {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 4px;
 }
 
 input[type=submit]:hover {
@@ -52,6 +54,7 @@ img.avatar {
   border-radius: 5px;
   background-color: #1A2364;
   padding: 20px;
+
 }
 
 .imgcontainer {
@@ -103,13 +106,6 @@ If(isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"])
 
         $result_set = mysqli_query($dbConnection, $query);
 
-        
-        //while($record = mysqli_fetch_assoc($result_set)){
-        //    var_dump($record);
-        //}
-
-        //var_dump($result_set);
-
         if(mysqli_num_rows($result_set) == 1 ){
             $_SESSION["email"] = $email;
             $_SESSION["password"] = $password;
@@ -121,9 +117,7 @@ If(isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"])
         }
     }
 }
-mysqli_free_result($result_set);
 databaseDisconnect($dbConnection); // disconnect from database
 ?>	
 </body>
 </html>
-
