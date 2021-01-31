@@ -63,24 +63,24 @@ body {
 }
 
 .tableTopFive{
-  position: relative;
-  top: 30px;
-  border-radius: 5px;
-  width:400px;
-  height:300px;
-  background-color: #ffffff;
-
+  margin-left:30px;
+  display: inline-block;
+  margin-bottom: 522px;
 }
 
 .map{
-  width: 800px; height: 600px;
-
+  width: 1200px; 
+  height: 700px;
+  margin-left:30px;
+  margin-top: 30px;
+  display: inline-block;
+  border: 1.5px solid black;
 }
 
 .mapboxgl-popup{
     transform:none !important;
-    top: 0%;
-    left: 0px;
+    top: 5%;
+    left: 10px;
 }
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
@@ -101,14 +101,6 @@ body {
 <div class="topnav">
    <img src="UIC2.png"> <!--button van maken die naar home page gaat-->
    <a class="rightSideMenu" href = "logout.php">Sign Out</a>
-</div>
-
-<div class="tableTopFive">
-    <?php arrayToTopFive() ?>
-</div>
-
-<div class="footer"> 
-<p><small>&copy; Copyright 2021, Storm Metrics Company. All Rights Reserved.</small></p>
 </div>
 
 <div class='map' id='map'></div>
@@ -222,5 +214,14 @@ body {
             }
 
         </script>
+
+<div class="tableTopFive">
+    <?php arrayToTopFive() ?>
+</div>
+
+<div class="footer"> 
+<p><small>&copy; Copyright 2021, Storm Metrics Company. All Rights Reserved.</small></p>
+</div>
+
 </body>
 </html>
