@@ -103,7 +103,6 @@ If(isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"])
                     AND password = '$password'
                     ";
                     
-
         $result_set = mysqli_query($dbConnection, $query);
 
         if(mysqli_num_rows($result_set) == 1 ){
