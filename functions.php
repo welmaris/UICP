@@ -74,27 +74,28 @@ tr:hover {
 
 //Making a table from an array
 function arrayToTable($data){
-    echo '<table border="1">';
+    $string =  '<table border="1">';
     $isHeaderGenerated = 0;
     foreach($data as $datapunt ){
         if($isHeaderGenerated == 0){
-        echo '<tr>';
+            $string .= '<tr>';
         foreach(array_keys($datapunt) as $key){ 
-          echo "<th>".$key."</th>";
+            $string .= "<th>".$key."</th>";
         }
-        echo '</tr>';
+        $string .= '</tr>';
         $isHeaderGenerated = 1;
       }
 
       //rows
-      echo '<tr>'; 
+      $string .= '<tr>'; 
       foreach($datapunt as $key => $value ){
-        echo '<td>'.$value.'</td>';
+        $string .= '<td>'.$value.'</td>';
       }
-      echo '</tr>';
+      $string .= '</tr>';
     }
   
-  echo '</table>';
+    $string .= '</table>';
+    return $string;
 }
 
 function getAverage($stnnr, $code){

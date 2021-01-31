@@ -14,12 +14,28 @@
     ];
     $jsPakistan = json_encode($pakistanStations);
 
+    $pakistanData = [];
+    for($i = 0; $i < sizeof($pakistanStations); $i++){
+        $station = $pakistanStations[$i];
+        $nr = $station[0];
+        $pakistanData[$nr] = arrayToTable(getData($nr));
+    }
+    $pakistanData = json_encode($pakistanData);
+
     // Afghanistan
     $afghanistanStations = [
         [409480,'KABUL AIRPORT','AFGHANISTAN',34.55,69.217,1791]
     ];
     $jsAfghanistan = json_encode($afghanistanStations);
    
+    $afghanistanData = [];
+    for($i = 0; $i < sizeof($afghanistanStations); $i++){
+        $station = $afghanistanStations[$i];
+        $nr = $station[0];
+        $afghanistanData[$nr] = arrayToTable(getData($nr));
+    }
+    $afghanistanData = json_encode($afghanistanData);
+
     $humAfghanistan = [];
     for($i = 0; $i < sizeof($afghanistanStations); $i++){
         $station = $afghanistanStations[$i];
@@ -68,6 +84,14 @@
         [408790,'IRANSHAHR','IRAN',27.2,60.7,591]
     ];
     $jsIran = json_encode($iranStations);
+
+    $iranData = [];
+    for($i = 0; $i < sizeof($iranStations); $i++){
+        $station = $iranStations[$i];
+        $nr = $station[0];
+        $iranData[$nr] = arrayToTable(getData($nr));
+    }
+    $iranData = json_encode($iranData);
 
     $humIran = [];
     for($i = 0; $i < sizeof($iranStations); $i++){
@@ -144,6 +168,14 @@
         [749238,'ONDAL INDIA','INDIA',23.616,87.2,86]
     ];
     $jsIndia = json_encode($indiaStations);
+
+    $indiaData = [];
+    for($i = 0; $i < sizeof($indiaStations); $i++){
+        $station = $indiaStations[$i];
+        $nr = $station[0];
+        $indiaData[$nr] = arrayToTable(getData($nr));
+    }
+    $indiaData = json_encode($indiaData);
 
     $humIndia = [];
     for($i = 0; $i < sizeof($indiaStations); $i++){
@@ -625,6 +657,14 @@
         [749348,'HANKOW CHINA','CHINA',30.583,114.25,37]
     ];
     $jsChina = json_encode($chinaStations);
+
+    $chinaData = [];
+    for($i = 0; $i < sizeof($chinaStations); $i++){
+        $station = $chinaStations[$i];
+        $nr = $station[0];
+        $chinaData[$nr] = arrayToTable(getData($nr));
+    }
+    $chinaData = json_encode($chinaData);
 
     $humChina = [];
     for($i = 0; $i < sizeof($chinaStations); $i++){

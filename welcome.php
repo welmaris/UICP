@@ -77,6 +77,23 @@ body {
 
 }
 
+.mapboxgl-popup{
+    transform:none !important;
+    top: 0%;
+    left: 0px;
+}
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-center .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip, 
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip{
+    display:none !important;
+}
+
 </style>
 </head>
 <body>
@@ -113,7 +130,9 @@ body {
             for (var i = 0; i < stations.length; i++){
                 
                 var station = stations[i];
-                var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                var nr = station[0];
+                var table = <?php echo $pakistanData; ?>;
+                var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
                 
                 pakistan[i] = new mapboxgl.Marker({
                     color: "#f07120"
@@ -126,12 +145,13 @@ body {
             var afghanistan = [];
             var stations = <?php echo $jsAfghanistan; ?>;
             var humidity = <?php echo $humAfghanistan; ?>;
+            var table = <?php echo $afghanistanData; ?>;
             for (var i = 0; i < stations.length; i++){
                 var station = stations[i];
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
                       
                     afghanistan[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -145,12 +165,13 @@ body {
             var iran = [];
             var stations = <?php echo $jsIran; ?>;
             var humidity = <?php echo $humIran; ?>;
+            var table = <?php echo $iranData; ?>;
             for (var i = 0; i < stations.length; i++){
                 var station = stations[i];
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
 
                     iran[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -164,12 +185,13 @@ body {
             var india = [];
             var stations = <?php echo $jsIndia; ?>;
             var humidity = <?php echo $humIndia; ?>;
+            var table = <?php echo $indiaData; ?>;
             for (var i = 0; i < stations.length; i++){
                 var station = stations[i];
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
 
                     india[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -183,6 +205,7 @@ body {
             var china = [];
             var stations = <?php echo $jsChina; ?>;
             var humidity = <?php echo $humChina; ?>;
+            var table = <?php echo $chinaData; ?>;
             for (var i = 0; i < stations.length; i++){
                 var station = stations[i];
                 var nr = station[0];
