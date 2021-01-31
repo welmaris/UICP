@@ -1,39 +1,8 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="UTF-8">
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
 
-}
-
-td, th {
-  border: 2px solid black;
-  text-align: left;
-  padding: 5px;
-}
-
-tr th {
-  background-color: #2e3192;
-  color: white;
-}
-
-tr:nth-child(odd) {
-  background-color: #ec7616;
-}
-
-</style>
-</head>
-<body>
 <?php
-$jsonfile = file_get_contents("../data.json");
 
-//json to array
-$array = json_decode($jsonfile, true);
 
+function arrayToTopFive($data){
 echo '<table border="1">';
 echo '<tr><th>STN</th><th>PRCP</th></th></tr>';
 
@@ -52,4 +21,42 @@ echo '<tr><th>STN</th><th>PRCP</th></th></tr>';
           <td><?PHP echo $value["PRCP"]; ?></td>
           </tr>
       <?php } echo '</table>'?> 
-    </body>
+      }
+
+
+                [415300,'PESHAWAR','PAKISTAN',34.017,71.583,360],
+                [415710,'ISLAMABAD AIRPORT','PAKISTAN',33.617,73.1,508],
+                [416410,'LAHORE AIRPORT','PAKISTAN',31.517,74.4,217],
+                [417490,'NAWABSHAH','PAKISTAN',26.25,68.367,38],
+                [417560,'JIWANI','PAKISTAN',25.067,61.8,57],
+                [417800,'KARACHI AIRPORT','PAKISTAN',24.9,67.133,22]
+
+
+
+<?php
+    //Making a table from an aFrray
+function arrayToTable($data){
+    echo '<table border="1">';
+    $isHeaderGenerated = 0;
+    foreach($data as $datapunt ){
+        if($isHeaderGenerated == 0){
+        echo '<tr>';
+        foreach(array_keys($datapunt) as $key){ 
+          echo "<th>".$key."</th>";
+        }
+        echo '</tr>';
+        $isHeaderGenerated = 1;
+      }
+
+      //rows
+      echo '<tr>'; 
+      foreach($datapunt as $key => $value ){
+        echo '<td>'.$value.'</td>';
+      }
+      echo '</tr>';
+    }
+  
+  echo '</table>';
+}
+
+?>

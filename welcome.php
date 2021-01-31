@@ -7,6 +7,7 @@ include 'functions.php';
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -56,6 +57,11 @@ body {
    margin: 7.5px;
 }
 
+.tableTopFive{
+  position: relative;
+  top: 30px;
+}
+
 </style>
 </head>
 <body>
@@ -65,18 +71,17 @@ body {
    <a class="rightSideMenu" href = "logout.php">Sign Out</a>
 </div>
 
+<div class="tableTopFive">
+    <?php arrayToTable(getData(14830)) ?>
+</div>
+
+
+
+
 <div class="footer"> 
 <p><small>&copy; Copyright 2021, Storm Metrics Company. All Rights Reserved.</small></p>
 </div>
 
-<?php
-//arrayToTable(getData(14830));
-?>
-
 
 </body>
 </html>
-
-
-
-

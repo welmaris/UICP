@@ -16,6 +16,13 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  h3 {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+
 input[type=text] {
     width: 100%;
   padding: 12px 20px;
@@ -54,7 +61,6 @@ img.avatar {
   border-radius: 5px;
   background-color: #1A2364;
   padding: 20px;
-
 }
 
 .imgcontainer {
@@ -63,9 +69,14 @@ img.avatar {
 }
 
 .message{
-
-
+  width: 420;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #1FB062;
+  padding: 10px;
 }
+
 </style>
 
 <head>
@@ -80,7 +91,7 @@ img.avatar {
             </div>
 		    <input type="text" name="email" placeholder="Email address" id="email" required>
 		    <input type="text" name="password" placeholder="Password" id="password" required>
-            <input type="submit" name="login" value="Log in">
+            <input type="submit" name="login" value="Log in"> 
         </div>
 </form>
 
@@ -111,8 +122,11 @@ If(isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"])
             header("location: welcome.php", TRUE, 301);
             exit();
         } else {
-            $message = "Username and/or password incorrect, try again.";
-            echo $message;
+          ?>
+          <div class="message">
+          <h3>Username and&#47;or password incorrect, try again.</h3>
+          </div>
+          <?php
         }
     }
 }
