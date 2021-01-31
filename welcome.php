@@ -1,4 +1,6 @@
-<html">
+<?php
+include 'functions.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -63,10 +65,14 @@ body {
    <a class="rightSideMenu" href = "logout.php">Sign Out</a>
 </div>
 
-
 <div class="footer"> 
 <p><small>&copy; Copyright 2021, Storm Metrics Company. All Rights Reserved.</small></p>
 </div>
+
+<?php
+//arrayToTable(getData(14830));
+?>
+
 
 </body>
 </html>
