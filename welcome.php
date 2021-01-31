@@ -11,7 +11,7 @@ include 'functions.php';
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f7f8fc;
+  background-color: #eeeff5;
 }
 
 .topnav {
@@ -60,6 +60,11 @@ body {
 .tableTopFive{
   position: relative;
   top: 30px;
+  border-radius: 5px;
+  width:400px;
+  height:300px;
+  background-color: #ffffff;
+
 }
 
 </style>
@@ -72,9 +77,12 @@ body {
 </div>
 
 <div class="tableTopFive">
-    <?php arrayToTable(getData(14830)) ?>
+    <?php arrayToTopFive() ?>
 </div>
 
+<div class="map">
+    <?php  ?>
+</div>
 
 
 

@@ -4,26 +4,37 @@
 <style>
 
 table {
-    font-family: arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
 }
 
 td, th {
-    border: 2px solid black;
+    border: 1.5px solid black;
     text-align: left;
     padding: 5px;
 }
 
 tr th {
-    background-color: #2e3192;
+    background-color: #1A2364;
     color: white;
 }
 
-tr:nth-child(odd) {
-    background-color: #ec7616;
+tr:nth-child(even) {
+    background-color: #f7f8fc;
 }
+
+tr:nth-child(odd) {
+    background-color: #f07120;
+}
+
+
+tr:hover {
+    background-color: #1FB062;
+}
+
+
 
 </style>
 </head>
@@ -33,7 +44,7 @@ tr:nth-child(odd) {
     function getData($stationnr){
 
         // Directory
-        $dir = "../DATA/" . $stationnr;
+        $dir = "../weatherdata-mounting-point/" . $stationnr;
 
         $data = array();
 
@@ -61,7 +72,7 @@ tr:nth-child(odd) {
     }   
 
 
-//Making a table from an aFrray
+//Making a table from an array
 function arrayToTable($data){
     echo '<table border="1">';
     $isHeaderGenerated = 0;
@@ -113,7 +124,7 @@ function getAverage($stnnr, $code){
 
     // for other averages
     if (sizeof($array) > 0){
-        $average = array_sum($array) / sizeof($array);
+        $average = round(array_sum($array) / sizeof($array),2);
     } else {
         $average = 0;
     }
@@ -121,7 +132,47 @@ function getAverage($stnnr, $code){
     return $average;
 }
 
+function arrayToTopFive(){
+    $pakistan_Stations = [
+        [415300,'PESHAWAR','PAKISTAN',34.017,71.583,360],
+        [415710,'ISLAMABAD AIRPORT','PAKISTAN',33.617,73.1,508],
+        [416410,'LAHORE AIRPORT','PAKISTAN',31.517,74.4,217],
+        [417490,'NAWABSHAH','PAKISTAN',26.25,68.367,38],
+        [417560,'JIWANI','PAKISTAN',25.067,61.8,57],
+        [417800,'KARACHI AIRPORT','PAKISTAN',24.9,67.133,22]
+    ];
 
-?>
+   $averagePRCP = [];
+    for($i=0; $i < sizeof($pakistan_Stations); $i++){
+        $STN = $pakistan_Stations[$i];
+        $stationsnr= $STN[0];
+        $averagePRCP[$stationsnr]=(getAverage($stationsnr, "prcp"));
+        arsort($averagePRCP);
+    }
+
+    //sort array
+    $p=1;
+    echo "<table>";
+    echo "<tr><th>Positiion</th><th>Stationnumber</th><th>Average rainfall</th<</tr>";
+    foreach ($averagePRCP as $key => $value) {
+        if($p<6){
+        echo "<tr>";
+        echo "<td>".$p++."</td>";
+        echo "<td>".$key."</td>";
+        echo "<td>".$value."</td>";
+        echo "</tr>";
+        }
+       } 
+   echo "</table>";
+    }
+    
+    
+    
+ 
+
+
+
+
+?>  
 </body>
 </html>
