@@ -121,6 +121,11 @@ function getAverage($stnnr, $code){
     return $average;
 }
 
+// Method to get humidity with dewpoint (C) and Temperature (C)
+function getHumidity($dewp, $temp){
+    $result = (5*($dewp - $temp) + 100);
+    return $result;
+}
 
 ?>
 </body>
