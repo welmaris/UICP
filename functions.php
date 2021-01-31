@@ -92,7 +92,7 @@ function getAverage($stnnr, $code){
     $array = [];
 
     // for average humidity
-    if($code == 'humid')
+    if($code == 'humid'){
         for($i = 0; $i < sizeof($data); $i++){
             $current = $data[$i];
             $dewp = $current['dewp'];
@@ -102,7 +102,7 @@ function getAverage($stnnr, $code){
 
             // add humidity 
             array_push($array, $h);
-        }
+        };
     } else {
         for($i = 0; $i < sizeof($data); $i++){
             $current = $data[$i];
