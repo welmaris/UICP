@@ -1,7 +1,8 @@
-
 // TIP; sluit alle stations (het is een lange lijst)
 //      0       1       2           3       4         5
 // [stationnr, name, country, latitude, longitude, elevation]
+<script scr='stationArrays.js'></script>
+
 var pakistan_Stations = [
     ['415300','PESHAWAR','PAKISTAN','34.017','71.583','360'],
     ['415710','ISLAMABAD AIRPORT','PAKISTAN','33.617','73.1','508'],
@@ -540,7 +541,6 @@ var china_Stations = [
     [588130,'GUANGCHANG','CHINA',26.85,116.333,142],
     [588340,'NANPING','CHINA',26.633,118,128],
     [588470,'FUZHOU','CHINA',26.083,119.283,85],
-    [588490,'MAZU','TAIWAN',26.167,119.933,91],
     [588530,'TAISHAN','CHINA',27,120.7,107],
     [589110,'CHANGTING','CHINA',25.85,116.367,311],
     [589210,'YONGAN','CHINA',25.967,117.35,204],
@@ -560,7 +560,6 @@ var china_Stations = [
     [591020,'XUNWU','CHINA',24.95,115.65,299],
     [591170,'MEI XIAN','CHINA',24.3,116.117,84],
     [591340,'XIAMEN','CHINA',24.483,118.083,139],
-    [591580,'TAIZHONG','TAIWAN',24.15,120.683,78],
     [592090,'NAPO','CHINA',23.3,105.95,794],
     [592110,'BAISE','CHINA',23.9,106.6,177],
     [592540,'GUIPING','CHINA',23.4,110.083,44],
@@ -597,39 +596,110 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2VsbWFyaXMiLCJhIjoiY2traWJ0dnFwMDUzbDJ0czdmY
 //creation of map
 var map = new mapboxgl.Map({
     container: 'map',
-    center: ['80', '31'],
+    center: ['75', '31'],
     zoom: '4',
     style: 'mapbox://styles/mapbox/streets-v11'
 }).addControl(new mapboxgl.NavigationControl());
 
-var afghanistan = [];
-for (i = 0; i < afghanistan_Stations.length; i++){
-    var station = afghanistan_Stations[i];
-    afghanistan[i] = new mapboxgl.Marker().setLngLat([station[4], station[3]]).addTo(map);
-}
-
+// creation markers
 var pakistan = [];
 for (i = 0; i < pakistan_Stations.length; i++){
     var station = pakistan_Stations[i];
     pakistan[i] = new mapboxgl.Marker({
-        color: "#ffffff"
+        color: "#f07120"
     }).setLngLat([station[4], station[3]]).addTo(map);
+}
+
+var afghanistan = [];
+for (i = 0; i < afghanistan_Stations.length; i++){
+    var station = afghanistan_Stations[i];
+    stationnr = station[0];
+    // if (averageHumidity(stationnr) >= '80'){
+        afghanistan[stationnr] = new mapboxgl.Marker({
+        color: "#1A2364"
+        }).setLngLat([station[4], station[3]]).addTo(map);
+    // }
 }
 
 var iran = [];
 for (i = 0; i < iran_Stations.length; i++){
     var station = iran_Stations[i];
-    iran[i] = new mapboxgl.Marker().setLngLat([station[4], station[3]]).addTo(map);
+    stationnr = station[0];
+    // if (averageHumidity(stationnr) >= '80'){
+        iran[stationnr] = new mapboxgl.Marker({
+        color: "#1A2364"
+        }).setLngLat([station[4], station[3]]).addTo(map);
+    // }
 }
 
 var china = [];
 for (i = 0; i < china_Stations.length; i++){
     var station = china_Stations[i];
-    china[i] = new mapboxgl.Marker().setLngLat([station[4], station[3]]).addTo(map);
+    stationnr = station[0];
+    // if (averageHumidity(stationnr) >= '80'){
+        china[stationnr] = new mapboxgl.Marker({
+        color: "#1A2364"
+        }).setLngLat([station[4], station[3]]).addTo(map);
+    // }
 }
 
 var india = [];
 for (i = 0; i < india_Stations.length; i++){
     var station = india_Stations[i];
-    india[i] = new mapboxgl.Marker().setLngLat([station[4], station[3]]).addTo(map);
+    stationnr = station[0];
+    // if (averageHumidity(stationnr) >= '80'){
+        india[stationnr] = new mapboxgl.Marker({
+        color: "#1A2364"
+        }).setLngLat([station[4], station[3]]).addTo(map);
+    //}
+}
+
+function getHumidity(Temp, dewp){
+    result = 5(dewp - temp) + 100;
+    return result;
+}
+
+function averageHumidity(nrstring){
+
+    var Path, foundFiles, aFile, Path, attr, i, e, dyear;
+    var DateVal, Handle, FileDate, ReadOnlyFile;
+    
+    Path = "C:\\"; //Folder where we will search for files
+    // Path = "../../nrstring"
+    foundFiles=aqFileSystem.FindFiles(Path, "*.json");
+    
+    if (!strictEqual(foundFiles, null)){
+        count = foundFiles.length;
+        total = 0;
+        while (foundFiles.HasNext())
+        {
+            json=foundFiles.Next();
+    
+            // Checks whether the file is read-only
+            ReadOnlyFile = (aFile.Attributes & 1) != 0;
+            // If the file is read-only, we should make it writable
+            if (ReadOnlyFile){
+                // Removes the ReadOnly attribute
+                attr = aFile.Attributes & (~1);
+                aqFile.SetFileAttributes(Path + aFile.Name, attr);
+            }
+
+            // get the humidity
+            temp = json["TEMP"];
+            dewp = json["DEWP"];
+            total += getHumidity(temp, dewp);
+
+            Log.Message("Processing the file " + Path + aFile.Name);
+
+            // Restores the ReadOnly attribute, if necessary
+            if (ReadOnlyFile){
+                aqFile.SetFileAttributes(Path + aFile.Name, 1);
+            }
+        }
+        average = total / count
+        return average;
+    } else {
+        Log.Message("No files were found.");
+        return false;
+    }
 }
