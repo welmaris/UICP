@@ -6,9 +6,7 @@
     </head>
 
     <body>
-        <div id='map' style='width: 800px; height: 600px;'>
-            
-        </div>
+        <div id='map' style='width: 800px; height: 600px;'></div>
         <script scr='stationArrays.js'></script>
         <script type="text/javascript" scr='map.js'></script>
         <script>
@@ -676,14 +674,19 @@
                 return result;
             }
 
-            function getAverage(stationnr){
+            <?php
+                // // function to get average, second it thing you want average from
+                // function getAverage($stationnr, $measure){
 
-                if (stationnr !instanceof String){
-                    stationnr = toString(stationnr);
-                }
+                //     // if ($stationnr !instanceof String){
+                //     //     $stationnr = toString($stationnr);
+                //     // }
 
-                
-            }
+                //     $dir = 
+
+                // }
+
+            ?>
         </script>
     </body>
 </html>
