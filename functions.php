@@ -86,6 +86,42 @@ function arrayToTable($data){
   echo '</table>';
 }
 
+function getAverage($stnnr, $code){
+    // Get all the data
+    $data = getData($stnnr);
+
+    $array = [];
+
+    // for average humidity
+    if($code == 'humid'){
+        for($i = 0; $i < sizeof($data); $i++){
+            $current = $data[$i];
+            $dewp = $current['dewp'];
+            $temp = $current['temp'];
+
+            $h = getHumidity($dewp, $temp);
+
+            // add humidity 
+            array_push($array, $h);
+        };
+    } else {
+        for($i = 0; $i < sizeof($data); $i++){
+            $current = $data[$i];
+            array_push($array, $current[$code]);
+        }
+    }
+
+    // for other averages
+    if (sizeof($array) > 0){
+        $average = array_sum($array) / sizeof($array);
+    } else {
+        $average = 0;
+    }
+
+    return $average;
+}
+
+
 ?>
 </body>
 </html>
