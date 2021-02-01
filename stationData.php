@@ -40,7 +40,7 @@
     for($i = 0; $i < sizeof($afghanistanStations); $i++){
         $station = $afghanistanStations[$i];
         $nr = $station[0];
-        $humAfghanistan[$nr] = getAverage($nr, 'humid');
+        $humAfghanistan[$nr] = getAverage(getData($nr), $nr, 'humid');
     }
     $humAfghanistan = json_encode($humAfghanistan);
 
@@ -97,7 +97,7 @@
     for($i = 0; $i < sizeof($iranStations); $i++){
         $station = $iranStations[$i];
         $nr = $station[0];
-        $humIran[$nr] = getAverage($nr, 'humid');
+        $humIran[$nr] = getAverage(getData($nr), $nr, 'humid');
     }
     $humIran = json_encode($humIran);
 
@@ -181,7 +181,7 @@
     for($i = 0; $i < sizeof($indiaStations); $i++){
         $station = $indiaStations[$i];
         $nr = $station[0];
-        $humIndia[$nr] = getAverage($nr, 'humid');
+        $humIndia[$nr] = getAverage(getData($nr), $nr, 'humid');
     }
     $humIndia = json_encode($humIndia);
 
@@ -670,7 +670,7 @@
     for($i = 0; $i < sizeof($chinaStations); $i++){
         $station = $chinaStations[$i];
         $nr = $station[0];
-        $humChina[$nr] = getAverage($nr, 'humid');
+        $humChina[$nr] = getAverage(getData($nr), $nr, 'humid');
     }
     $humChina = json_encode($humChina);
 
