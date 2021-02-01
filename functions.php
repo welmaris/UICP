@@ -158,65 +158,63 @@ tr:hover {
         return $average;
     }
 
-    // function arrayToTopFive(){
-    //     $pakistan_Stations = [
-    //         [415300,'PESHAWAR','PAKISTAN',34.017,71.583,360],
-    //         [415710,'ISLAMABAD AIRPORT','PAKISTAN',33.617,73.1,508],
-    //         [416410,'LAHORE AIRPORT','PAKISTAN',31.517,74.4,217],
-    //         [417490,'NAWABSHAH','PAKISTAN',26.25,68.367,38],
-    //         [417560,'JIWANI','PAKISTAN',25.067,61.8,57],
-    //         [417800,'KARACHI AIRPORT','PAKISTAN',24.9,67.133,22]
-    //     ];
+    function arrayToTopFive(){
 
-    //     //array met de laatste 7 dagen
-    //     $lastSevenDays = [];
-    //     for ($i=0; $i<7; $i++){
-    //         $day = date("Y-m-d", strtotime($i." days ago"));
-    //         array_push($lastSevenDays, $day);      
-    //     }
-    //     //echo '<pre>'; print_r($lastSevenDays); echo '</pre>';
+        $stations = [
+            [415300,'PESHAWAR','PAKISTAN',34.017,71.583,360],
+            [415710,'ISLAMABAD AIRPORT','PAKISTAN',33.617,73.1,508],
+            [416410,'LAHORE AIRPORT','PAKISTAN',31.517,74.4,217],
+            [417490,'NAWABSHAH','PAKISTAN',26.25,68.367,38],
+            [417560,'JIWANI','PAKISTAN',25.067,61.8,57],
+            [417800,'KARACHI AIRPORT','PAKISTAN',24.9,67.133,22]
+        ];
+
+        $days = getWeek();
+
         
+        $data=[];
+        // Loop through Days
+        foreach($days as $day){
 
-    //     //$averagePRCP = [];
-    //     //for($i=0; $i < sizeof($pakistan_Stations); $i++){
-    //     //    $STN = $pakistan_Stations[$i];
-    //     //    $stationsnr= $STN[0];
-    //     //    $averagePRCP[$stationsnr]=(getDailyData($stationsnr, "prcp"));
-    //     //    arsort($averagePRCP);
-    //     //}
+            foreach($stations as $station){
+                $nr = $station[0];
+                $dataDay = getDailyData($nr, $day);
 
-    //     //loop door pakistan stations
-    //     //gemiddelde opvragen per station per dag (voor één week)
-    //     $averagePRCP = [];
-    //     for($i=0; $i < sizeof($pakistan_Stations); $i++){
-    //         $STN = $pakistan_Stations[$i];
-    //         $stationsnr= $STN[0];
-    //         for($i=0; $i < sizeof($lastSevenDays); $i++){
-    //             $averagePRCP[$stationsnr]=(getAverage($stationsnr, "prcp"));
-    //             arsort($averagePRCP);
-    //         }
-    //     }
+                if(!empty($dataDay)){
+                    
+                    $average = getAverage($dataDay, 'prcp');
 
-    //     //echo '<pre>'; print_r($averagePRCP); echo '</pre>';
+                    $data[$nr] = $average;
+                }
+            }
+            arsort($data, SORT_DESC);
+        }
 
-    //     //sort array
-    //     $p=1;
-    //     echo "<table>";
-    //     echo "<tr><th>Positiion</th><th>Stationnumber</th><th>Average rainfall</th<</tr>";
-    //     foreach ($averagePRCP as $key => $value) {
-    //         if($p<6){
-    //         echo "<tr>";
-    //         echo "<td>".$p++."</td>";
-    //         echo "<td>".$key."</td>";
-    //         echo "<td>".$value."</td>";
-    //         echo "</tr>";
-    //         }
-    //     } 
-    //     echo "</table>";
-    // }
+        $p=1;
+        echo "<table>";
+        echo "<tr><th>Position</th><th>Stationnumber</th><th>Average rainfall</th<</tr>";
+        foreach ($data as $key => $value) {
+            if($p<6){
+            echo "<tr>";
+            echo "<td>".$p++."</td>";
+            echo "<td>".$key."</td>";
+            echo "<td>".$value."</td>";
+            echo "</tr>";
+            }
+        } 
+        echo "</table>";
+    }
 
-    // arrayToTopFive();
-
+    function getWeek(){
+        $days = [];
+        for ($i=0; $i < 8; $i++){
+            $strpast = '-'.$i.' days';
+            $current = date('Y-m-d', strtotime($strpast));
+            $days[$i] = $current;
+        }
+        return $days;
+    }
+    arrayToTopFive()
 ?>  
 </body>
 </html>
