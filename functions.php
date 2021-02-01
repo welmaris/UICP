@@ -69,7 +69,7 @@
 
     //Making a table from an array
     function arrayToTable($data){
-        $string = '<table>';
+        $string = '<table class="tableMap">';
         $string .= '<tr><th>Station</th><th>Date</th><th>Time</th><th>Temperature (C&#176;)</th><th>Dewpoint (C&#176;)</th><th>Airpressure (station level)</th><th>Airpressure (sea level)</th><th>Visibility (km)</th><th>Windspeed (km/h)<th>Precipitation (cm)</th><th>Snow Depth (cm)</th><th>Events</th><th>Cloudcover (%)</th><th>Wind direction (degrees)</th></th></tr>';
 
         foreach($data as $datapunt ){
@@ -149,7 +149,7 @@
 
 
         $p=1;
-        $string = "<table class='tabelmap'>";
+        $string = "<table class='topfive'>";
         $string .= "<tr><th>Position</th><th>Stationnumber</th><th>Average rainfall</th<</tr>";
         foreach ($data as $key => $value) {
             if($p<6){

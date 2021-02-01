@@ -1,6 +1,4 @@
-<?php
-include 'stationData.php';
-?>
+<?php include 'stationData.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -10,10 +8,9 @@ include 'stationData.php';
         <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
     
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
 
+<style>
 /* body */
 body {
     margin: 0;
@@ -66,8 +63,18 @@ body {
    margin: 7.5px;
 }
 
-/* Table */
-table {
+/* Tables */
+    /* TopFive Table */
+.topfive{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    display: block;
+    height: 500px;
+    width:100%;
+    margin-top: 30px;
+}
+    /*Table in the map*/
+.tableMap{
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     display: block;
@@ -76,6 +83,7 @@ table {
     overflow-y:scroll;
 }
 
+    /* Common Table styles */
 td, th {
     border: 1.5px solid black;
     text-align: left;
@@ -99,26 +107,13 @@ tr:hover {
     background-color: #1FB062;
 }
 
-
-/* Top navigation bar */
-input[type=button] {
-background-color: #1FB062;
-  color: white;
-  font-weight : bold;
-  font-size : 16px;
-  padding: 5px 8px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
 /* Map*/
 .map{
   width: 1200px; 
   height: 700px;
   margin-left:30px;
   margin-top: 30px;
+  
   display: inline-block;
   border: 1.5px solid black;
 }
@@ -169,7 +164,7 @@ input[type=text] {
     border-radius: 4px;
 }
 
-input[type=submit], {
+input[type=submit] {
         background-color: #f07120;
         color: white;
         font-weight : bold;
@@ -182,53 +177,59 @@ input[type=submit], {
         border-radius: 4px;
     }  
 
-/* Table */
-    * {box-sizing: border-box}
-    body {font-family: "Lato", sans-serif;}
+/* Navigation Tabs with top5 Table */
 
-    /* Style the tab */
-    .tab {
-    float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    width: 30%;
-    height: 300px;
-    }
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #1A2364;
+  width: 8%;
 
-    /* Style the buttons inside the tab */
-    .tab button {
-    display: block;
-    background-color: inherit;
-    color: black;
-    padding: 22px 16px;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 17px;
-    }
+  box-sizing: border-box;
+  margin-left: 30px;
+  margin-top: 30px;
+}
 
-    /* Change background color of buttons on hover */
-    .tab button:hover {
-    background-color: #ddd;
-    }
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 12px 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  box-sizing: border-box;
+}
 
-    /* Create an active/current "tab button" class */
-    .tab button.active {
-    background-color: #ccc;
-    }
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #1FB062;
+  box-sizing: border-box;
+}
 
-    /* Style the tab content */
-    .tabcontent {
-    float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: 70%;
-    border-left: none;
-    height: 300px;
-    }
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #1FB062;
+  box-sizing: border-box;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 30%;
+  box-sizing: border-box;
+}
+
 </style>
 </head>
 <body>
@@ -343,7 +344,37 @@ input[type=submit], {
                     .addTo(map);
                 }
             }
+        </script>
+        
 
+<div class='top5'>
+    <div class='tab'>
+        <?php
+            $days = getWeek();
+            $bool = true;
+
+            foreach($days as $day){
+                if($bool){
+                    $bool = false;
+            ?>
+                <button class='tablinks' onclick="openContent(event, '<?php echo $day; ?>')" id='defaultOpen'><?php echo $day; ?></button>
+                <?php }else { ?>
+                
+                    <button class='tablinks' onclick="openContent(event, '<?php echo $day; ?>')"><?php echo $day; ?></button>
+                <?php }
+            }
+        ?>
+    </div>
+    <?php
+        foreach($days as $day){
+            $content = arrayDailyTopFive($day);
+            echo "<div id='$day' class='tabcontent'> $content </div>";
+        }
+    ?>
+    </div>
+</div>
+
+<script>
             //Top 5 Table
             function openContent(evt, date) {
                 var i, tabcontent, tablinks;
@@ -361,47 +392,17 @@ input[type=submit], {
 
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
-
         </script>
 
-<!-- <div class='Top5'>
-    <div class='tab'>
-        <?php
-            //$days = getWeek();
-            //$bool = true;
-
-            //foreach($days as $day){
-                //if($bool){
-                 //   $bool = false;
-            ?>
-                <button class='tablinks' onclick="openContent(event, '<?php //echo $day; ?>')", id='defaultOpen'><?php //echo $day; ?></button>
-                <?php //}else { ?>
-                
-                    <button class='tablinks' onclick="openContent(event, '<?php //echo $day; ?>')"><?php //echo $day; ?></button>
-                <?php //}
-
-            //}
-        ?>
-    </div>
-    <?php
-        //foreach($days as $day){
-            //$content = arrayDailyTopFive($day);
-            //echo "<div id='$day' class='tabcontent'> $content </div>";
-        //}
-    ?>
-    </div>
-</div> -->
-
-<div class="download">
+<!-- <div class="download">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <form name = "submitknop" method = "get" action="">
         <label for="stationnum">Station number:</label><br>
         <input type="text" id="stationnum" name="stationnum"><br>
         <input type="submit" name="submit" value="Submit"/> 
     </form>
-</div>
+</div> -->
 
-    
 <div class="footer"> 
 <p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>
 </div>
