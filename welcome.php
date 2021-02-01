@@ -200,7 +200,7 @@ background-color: #1FB062;
                 var h = humidity[nr];
                 if(h >= 80){
                     var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", afghanistanTable[nr], "</h3>");
-                      
+
                     afghanistan[i] = new mapboxgl.Marker({
                         color: "#1A2364"
                     }).setLngLat([station[4], station[3]])
@@ -220,7 +220,6 @@ background-color: #1FB062;
                 var h = humidity[nr];
                 if(h >= 80){
                     var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", iranTable[nr], "</h3>");
-
                     iran[i] = new mapboxgl.Marker({
                         color: "#1A2364"
                     }).setLngLat([station[4], station[3]])
@@ -240,7 +239,6 @@ background-color: #1FB062;
                 var h = humidity[nr];
                 if(h >= 80){
                     var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", indiaTable[nr], "</h3>");
-
                     india[i] = new mapboxgl.Marker({
                         color: "#1A2364"
                     }).setLngLat([station[4], station[3]])
@@ -260,7 +258,6 @@ background-color: #1FB062;
                 var h = humidity[nr];
                 if(h >= 80){
                     var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", chinaTable[nr], "</h3>");
-
                     china[i] = new mapboxgl.Marker({
                         color: "#1A2364"
                     }).setLngLat([station[4], station[3]])
@@ -270,7 +267,7 @@ background-color: #1FB062;
             }
 
         </script>
-<div class="dropdown">
+<!-- <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content">
   <a href="#">Link 1</a>
@@ -282,8 +279,8 @@ background-color: #1FB062;
 <div class="tableTopFive">
     <?php arrayToTopFive() ?>
     <input type="button" name="download" value="Download">
-</div>
-          -->
+</div> -->
+
 <div class="footer"> 
 <p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>
 </div>
