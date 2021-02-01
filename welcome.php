@@ -188,6 +188,45 @@ background-color: #1FB062;
     width: min-content;
 }
 
+.download{
+    display: inline-block;
+    border: 3px solid #f1f1f1;
+    width: 420;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #1FB062;
+    padding: 10px;
+}
+
+.fa-download{
+
+
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+}
+
+input[type=submit], {
+        background-color: #f07120;
+        color: white;
+        font-weight : bold;
+        font-size : 16px;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 4px;
+    }  
 </style>
 </head>
 <body>
@@ -198,7 +237,6 @@ background-color: #1FB062;
 </div>
 
 <div class='map' id='map'></div>
-<div class='info' id = 'info'></div>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1Ijoid2VsbWFyaXMiLCJhIjoiY2traWJ0dnFwMDUzbDJ0czdmYzJpeWpmdyJ9.Tr_OqxjnZ_9yjgri9TvZVA';
 
@@ -306,29 +344,37 @@ background-color: #1FB062;
 
         </script>
 
-<div class="dropdown">
+<!-- <div class="dropdown">
     <button class="dropbtn">Dropdown</button>
     <div class="dropdown-content">
         <span>Select Dag voor Top 5</span>
         <div class="dropdown-content">
             <?php
-                $days = getWeek();
-                foreach ($days as $day){
-                    $select = True;
-                    $topFive = arrayDailyTopFive($day);
-                    echo "<options href='#'>$day</options>";
-                }
+                // $days = getWeek();
+                // foreach ($days as $day){
+                //     $select = True;
+                //     $topFive = arrayDailyTopFive($day);
+                //     echo "<options href='#'>$day</options>";
+                // }
             ?>
         </div>
     </div>
+</div> -->
+
+<!-- <<div class="tableTopFive">
+    <?php //echo arrayDailyTopFive(date('Y-m-d')); ?>
+</div> --> -->
+
+<div class="download">
+    <form name = "submitknop" method = "get" action="">
+        <?php getXMLdownload() ?>
+        <label for="stationnum">Station number:</label><br>
+        <input type="text" id="stationnum" name="stationnum"><br>
+        <input type="submit" name="submit" value="Submit"/> 
+        <a href='station_data.xml' download><button class="btn">Download</button></a>
+    </form>
+</div>
     
-</div>
-
-<div class="tableTopFive">
-    <?php echo arrayDailyTopFive(date('Y-m-d')); ?>
-    <input type="button" name="download" value="Download">
-</div>
-
 <div class="footer"> 
 <p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>
 </div>
