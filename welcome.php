@@ -14,12 +14,14 @@ include 'stationData.php';
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
+/* body */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f7f8fc;
 }
 
+/* Top navigation bar */
 .topnav {
   overflow: hidden;
   background-color: #1A2364;
@@ -48,6 +50,7 @@ body {
   color: white;
 }
 
+/* Footer*/
 .footer {
    position: fixed;
    left: 0;
@@ -63,6 +66,7 @@ body {
    margin: 7.5px;
 }
 
+/* Table */
 table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -95,12 +99,8 @@ tr:hover {
     background-color: #1FB062;
 }
 
-.tableTopFive{
-  margin-left:30px;
-  display: inline-block;
 
-}
-
+/* Top navigation bar */
 input[type=button] {
 background-color: #1FB062;
   color: white;
@@ -113,50 +113,7 @@ background-color: #1FB062;
   border-radius: 4px;
 }
 
-.dropbtn {
-  background-color: #1FB062;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  padding: 5px 8px;
-  border-radius: 4px;
-}
-
-.dropdown {
-
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1
-    }
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
-
+/* Map*/
 .map{
   width: 1200px; 
   height: 700px;
@@ -188,6 +145,8 @@ background-color: #1FB062;
     width: min-content;
 }
 
+
+/* Download XML function */
 .download{
     display: inline-block;
     border: 3px solid #f1f1f1;
@@ -228,7 +187,7 @@ input[type=submit], {
         border-radius: 4px;
     }  
 
-    /* Table */
+/* Table */
     * {box-sizing: border-box}
     body {font-family: "Lato", sans-serif;}
 
@@ -425,7 +384,7 @@ input[type=submit], {
                 
                     <button class='tablinks' onclick="openContent(event, '<?php echo $day; ?>')"><?php echo $day; ?></button>
                 <?php }
-                
+
             }
         ?>
     </div>
@@ -438,7 +397,7 @@ input[type=submit], {
     </div>
 </div>
 
-<div class="download">
+<!-- <div class="download">
     <form name = "submitknop" method = "get" action="">
         <?php getXMLdownload() ?>
         <label for="stationnum">Station number:</label><br>
@@ -446,7 +405,7 @@ input[type=submit], {
         <input type="submit" name="submit" value="Submit"/> 
         <a href='station_data.xml' download><button class="btn">Download</button></a>
     </form>
-</div>
+</div> -->
     
 <div class="footer"> 
 <p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>
