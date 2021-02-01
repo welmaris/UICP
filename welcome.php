@@ -312,14 +312,23 @@ background-color: #1FB062;
 <div class="dropdown">
     <button class="dropbtn">Dropdown</button>
     <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <?php
+            $days = getWeek();
+            foreach ($days as $day){
+                $select = True;
+                $topFive = getDailyTopFive($day);
+                if($select){
+                    echo "<a selected='selected' value='strtolower'($day)'>$topFive</a>";
+                }else {
+                    echo "<a value='strtolower'($day)'>$topFive</a>";
+                }
+            }
+        ?>
     </div>
 </div>
 
 <div class="tableTopFive">
-    <?php arrayToTopFive() ?>
+    <?php arrayDailyTopFive(date('2021-30-01')); ?>
     <input type="button" name="download" value="Download">
 </div>
 

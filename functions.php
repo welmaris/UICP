@@ -158,7 +158,7 @@ tr:hover {
         return $average;
     }
 
-    function arrayToTopFive(){
+    function arrayDailyTopFive($day){
 
         $stations = [
             [415300,'PESHAWAR','PAKISTAN',34.017,71.583,360],
@@ -169,12 +169,11 @@ tr:hover {
             [417800,'KARACHI AIRPORT','PAKISTAN',24.9,67.133,22]
         ];
 
-        $days = getWeek();
-
+        // print_r ($day);
         
         $data=[];
         // Loop through Days
-        foreach($days as $day){
+        $listing = [];
 
             foreach($stations as $station){
                 $nr = $station[0];
@@ -188,24 +187,25 @@ tr:hover {
                 }
             }
             arsort($data, SORT_DESC);
-        }
+
 
         $p=1;
         echo "<table>";
         echo "<tr><th>Position</th><th>Stationnumber</th><th>Average rainfall</th<</tr>";
         foreach ($data as $key => $value) {
             if($p<6){
-            echo "<tr>";
-            echo "<td>".$p++."</td>";
-            echo "<td>".$key."</td>";
-            echo "<td>".$value."</td>";
-            echo "</tr>";
+                echo "<tr>";
+                echo "<td>".$p++."</td>";
+                echo "<td>".$key."</td>";
+                echo "<td>".$value."</td>";
+                echo "</tr>";
             }
         } 
         echo "</table>";
     }
 
     function getWeek(){
+
         $days = [];
         for ($i=0; $i < 8; $i++){
             $strpast = '-'.$i.' days';
@@ -214,7 +214,9 @@ tr:hover {
         }
         return $days;
     }
-    arrayToTopFive()
+    
+    // arrayDailyTopFive(date('2021-01-31'))
+
 ?>  
 </body>
 </html>
