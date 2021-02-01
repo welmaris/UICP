@@ -150,7 +150,7 @@
 
         $p=1;
         $string = "<table>";
-        echo "<tr><th>Position</th><th>Stationnumber</th><th>Average rainfall</th<</tr>";
+        $string .= "<tr><th>Position</th><th>Stationnumber</th><th>Average rainfall</th<</tr>";
         foreach ($data as $key => $value) {
             if($p<6){
                 $string .= "<tr>";
