@@ -393,11 +393,10 @@ input[type=submit], {
 </div> -->
 
 <div class="download">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <form name = "submitknop" method = "get" action="">
+    <form name = "submitknop" method = "get" action="xmldownload.php">
         <label for="stationnum">Station number:</label><br>
         <input type="text" id="stationnum" name="stationnum"><br>
-        <input type="submit" name="submit" value="Submit"/> 
+        <input type="submit" name="submit" value="Download"/> 
     </form>
 </div>
 
