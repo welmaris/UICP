@@ -123,7 +123,7 @@ tr:hover {
         return $string;
     }
 
-    function getAverage($data, $stnnr, $code){
+    function getAverage($data, $code){
 
         $array = [];
 
@@ -156,10 +156,6 @@ tr:hover {
         return $average;
     }
 
-
-
-    }
-
     function arrayToTopFive(){
         $pakistan_Stations = [
             [415300,'PESHAWAR','PAKISTAN',34.017,71.583,360],
@@ -170,30 +166,36 @@ tr:hover {
             [417800,'KARACHI AIRPORT','PAKISTAN',24.9,67.133,22]
         ];
 
+        //array met de laatste 7 dagen
         $lastSevenDays = [];
         for ($i=0; $i<7; $i++){
             $day = date("Y-m-d", strtotime($i." days ago"));
             array_push($lastSevenDays, $day);      
         }
-        echo '<pre>'; print_r($lastSevenDays); echo '</pre>';
-        }
+        //echo '<pre>'; print_r($lastSevenDays); echo '</pre>';
+        
 
+        //$averagePRCP = [];
+        //for($i=0; $i < sizeof($pakistan_Stations); $i++){
+        //    $STN = $pakistan_Stations[$i];
+        //    $stationsnr= $STN[0];
+        //    $averagePRCP[$stationsnr]=(getDailyData($stationsnr, "prcp"));
+        //    arsort($averagePRCP);
+        //}
+
+        //loop door pakistan stations
+        //gemiddelde opvragen per station per dag (voor één week)
         $averagePRCP = [];
         for($i=0; $i < sizeof($pakistan_Stations); $i++){
             $STN = $pakistan_Stations[$i];
             $stationsnr= $STN[0];
-            $averagePRCP[$stationsnr]=(getDailyData($stationsnr, "prcp"));
-            arsort($averagePRCP);
+            for($i=0; $i < sizeof($lastSevenDays); $i++){
+                $averagePRCP[$stationsnr]=(getAverage($stationsnr, "prcp"));
+                arsort($averagePRCP);
+            }
         }
 
-
-
-
-        for($i = 0; $i < count($); $i++)){
-
-
-
-
+        //echo '<pre>'; print_r($averagePRCP); echo '</pre>';
 
         //sort array
         $p=1;
@@ -211,7 +213,7 @@ tr:hover {
         echo "</table>";
     }
 
-    // print_r(getDailyData(11520, '2021-01-31'));
+    arrayToTopFive();
 
 ?>  
 </body>
