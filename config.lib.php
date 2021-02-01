@@ -4,7 +4,7 @@
     
    // Database configuration settings for MySQL instance
     $config['mysql']['hostname'] = "localhost";
-    $config['mysql']['username'] = "user";
-    $config['mysql']['password'] = "geheim";
+    $config['mysql']['username'] = "uicadmin";
+    $config['mysql']['password'] = "Bountiful-Heroism-33Stove";
     $config['mysql']['database'] = "accounts";
 ?>

@@ -23,8 +23,8 @@ h2 {
     font-size: 15px;
   }
 
-input[type=text] {
-    width: 100%;
+input[type=text],input[type=password] {
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -33,6 +33,7 @@ input[type=text] {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 4px;
 }
+
 input[type=submit] {
     background-color: #f07120;
   color: white;
@@ -90,7 +91,7 @@ img.avatar {
                 <img src="UIC.png" alt="Avatar" class="avatar">
             </div>
 		    <input type="text" name="email" placeholder="Email address" id="email" required>
-		    <input type="text" name="password" placeholder="Password" id="password" required>
+		    <input type="password" name="password" placeholder="Password" id="password" required>
             <input type="submit" name="login" value="Log in"> 
         </div>
 </form>
