@@ -1,44 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-
-table {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    display: block;
-    height: 500px;
-    width:100%;
-    overflow-y:scroll;
-}
-
-td, th {
-    border: 1.5px solid black;
-    text-align: left;
-    padding: 5px;
-}
-
-tr th {
-    background-color: #1A2364;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f7f8fc;
-}
-
-tr:nth-child(odd) {
-    background-color: #f07120;
-}
-
-
-tr:hover {
-    background-color: #1FB062;
-}
-
-</style>
-</head>
-<body>
 <?php
     // function to get data based on stationnr (int)
     function getData($stationnr){
@@ -218,5 +177,3 @@ tr:hover {
     // arrayDailyTopFive(date('2021-01-31'))
 
 ?>  
-</body>
-</html>
