@@ -1,0 +1,58 @@
+Here are the credits of what part of the website/server/database everyone made:
+
+WEBSITE
+For the website we all spend equal amount of time on working, some worked slower and needed more time. 
+But everyone worked hard and we mostly worked at the same time in a call.
+
+#Esther Zigterman-Rustenburg (401053)
+   -stationData.php
+   -welcome.php
+	*HTML
+	   ^script
+           ^dropdown
+	   ^TableTopFive --> partly
+	*Part of the CSS of the map
+   -functions.php
+	*getData()
+	*getDailyData()
+	*getHumidity()
+	*arrayToTable() --> partly
+	*arrayToDailyTopFive() --> partly
+	*getWeek() --> partly
+
+#Naomi Verkade (390567)
+   -config.lib.php
+   -database.lib.php 
+   -index.php
+   -logout.php
+   -welcome.php
+	*All CSS
+	*HTML
+	   ^footer
+	   ^navigation bar
+	   ^TableTopFive --> partly
+   -functions.php
+	*arrayToTable() --> partly
+	*arrayToDailyTopFive() --> partly
+	*getWeek() --> partly
+   -Database on the server for password/username --> partly
+
+#Haylee Drenth (391668)
+   -functions.php
+        *XML
+   -welcome.php
+	*HTML
+	    ^Download button
+   -Made a function like arrayToDailtTopFive(), unfortunatly had to be written again 
+    because of a structure change (see history on github).
+
+SERVER
+
+#Marijn Kok (383955)
+   -Database on the server for password/username --> partly
+
+#Janine Dijkstra (387486)
+
+#Tom Beugels (408128)
+
+

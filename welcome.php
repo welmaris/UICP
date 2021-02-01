@@ -15,9 +15,9 @@ include 'stationData.php';
 <style>
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f7f8fc;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f8fc;
 }
 
 .topnav {
@@ -186,11 +186,7 @@ background-color: #1FB062;
 
 .mapboxgl-popup-content{
     width: min-content;
-    
-
 }
-
-
 
 </style>
 </head>
