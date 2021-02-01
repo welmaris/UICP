@@ -5,7 +5,6 @@ include 'stationData.php';
 <!DOCTYPE html>
 <html>
 <head>
-
   <link rel="icon" href="/favicon.ico">
 	<title>Login</title>
         <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
@@ -62,6 +61,38 @@ body {
 
 .footer p{
    margin: 7.5px;
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    display: block;
+    height: 500px;
+    width:100%;
+    overflow-y:scroll;
+}
+
+td, th {
+    border: 1.5px solid black;
+    text-align: left;
+    padding: 5px;
+}
+
+tr th {
+    background-color: #1A2364;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f7f8fc;
+}
+
+tr:nth-child(odd) {
+    background-color: #f07120;
+}
+
+tr:hover {
+    background-color: #1FB062;
 }
 
 .tableTopFive{
