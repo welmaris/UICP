@@ -309,18 +309,23 @@ background-color: #1FB062;
             }
 
         </script>
+
 <div class="dropdown">
     <button class="dropbtn">Dropdown</button>
     <div class="dropdown-content">
-        <?php
-            $days = getWeek();
-            foreach ($days as $day){
-                $select = True;
-                $topFive = arrayDailyTopFive($day);
-                echo "<a href='#'>$day</a>";
-            }
-        ?>
+        <span>Select Dag voor Top 5</span>
+        <div class="dropdown-content">
+            <?php
+                $days = getWeek();
+                foreach ($days as $day){
+                    $select = True;
+                    $topFive = arrayDailyTopFive($day);
+                    echo "<options href='#'>$day</options>";
+                }
+            ?>
+        </div>
     </div>
+    
 </div>
 
 <div class="tableTopFive">
