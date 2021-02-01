@@ -160,6 +160,7 @@ background-color: #1FB062;
 </div>
 
 <div class='map' id='map'></div>
+<div class='info' id = 'info'></div>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1Ijoid2VsbWFyaXMiLCJhIjoiY2traWJ0dnFwMDUzbDJ0czdmYzJpeWpmdyJ9.Tr_OqxjnZ_9yjgri9TvZVA';
 
@@ -175,31 +176,33 @@ background-color: #1FB062;
             // Pakistan
             var pakistan = [];
             var stations = <?php echo $jsPakistan; ?>;
+            var pakistanTable = <?php echo $pakistanData; ?>;
             for (var i = 0; i < stations.length; i++){
                 
                 var station = stations[i];
                 var nr = station[0];
-                var table = <?php echo $pakistanData; ?>;
-                var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
+                var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, "</h3>");
                 
                 pakistan[i] = new mapboxgl.Marker({
                     color: "#f07120"
                 }).setLngLat([station[4], station[3]])
                 .setPopup(new mapboxgl.Popup().setHTML(content))
-                .addTo(map);
+                .addTo(map).getElement().addEventListener('click', () =>{
+                    document.getElementById('info').innerHTML = pakistanTable[nr];
+                });
             }
 
             //Afghanistan
             var afghanistan = [];
             var stations = <?php echo $jsAfghanistan; ?>;
             var humidity = <?php echo $humAfghanistan; ?>;
-            var table = <?php echo $afghanistanData; ?>;
+            var afghanistanTable = <?php echo $afghanistanData; ?>;
             for (var i = 0; i < stations.length; i++){
                 var station = stations[i];
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
+                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
                       
                     afghanistan[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -213,13 +216,13 @@ background-color: #1FB062;
             var iran = [];
             var stations = <?php echo $jsIran; ?>;
             var humidity = <?php echo $humIran; ?>;
-            var table = <?php echo $iranData; ?>;
+            var iranTable = <?php echo $iranData; ?>;
             for (var i = 0; i < stations.length; i++){
                 var station = stations[i];
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
+                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
 
                     iran[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -233,13 +236,13 @@ background-color: #1FB062;
             var india = [];
             var stations = <?php echo $jsIndia; ?>;
             var humidity = <?php echo $humIndia; ?>;
-            var table = <?php echo $indiaData; ?>;
+            var indiaTable = <?php echo $indiaData; ?>;
             for (var i = 0; i < stations.length; i++){
                 var station = stations[i];
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
+                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
 
                     india[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -253,13 +256,13 @@ background-color: #1FB062;
             var china = [];
             var stations = <?php echo $jsChina; ?>;
             var humidity = <?php echo $humChina; ?>;
-            var table = <?php echo $chinaData; ?>;
+            var chinaTable = <?php echo $chinaData; ?>;
             for (var i = 0; i < stations.length; i++){
                 var station = stations[i];
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
+                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
 
                     china[i] = new mapboxgl.Marker({
                         color: "#1A2364"
