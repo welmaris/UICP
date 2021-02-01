@@ -1,61 +1,46 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-
-<script type="text/javascript" src="tableExport/jquery.js"></script>
-
-<script type="text/javascript" src="tableExport/jquery.base64.js"></script>
-<script type="text/javascript" src="tableExport/tableExport.js"></script>
-
-<!-- <script type="text/javascript" src="tableExport/html2canvas.js"></script>
-
-<script type="text/javascript" src="tableExport/jspdf/jspdf.js"></script>
-<script type="text/javascript" src="tableExport/jspdf/libs/sprintf.js"></script>
-<script type="text/javascript" src="tableExport/jspdf/libs/base64.js"></script> -->
-
-<script type="text/javascript">
-$(document).ready(function(e) {
-
-    $("#pdf").click(function(e) {
-        $("myTable").tableExport({
-            type:'pdf',
-            escape: 'true'
-        });
-    });
-});
-    </script>
-
-    <body>
-
-        <button id="pdf" > Export as pdf</button>
-        
 <?php
-        $jsonfile = file_get_contents("../data.json");
+include 'functions.php';
+if (isset($_GET['stationnum'])){
+$dom = new DOMDocument();
+$meting = getData($_GET['stationnum']);
+$dom->encoding = 'utf-8';
 
-        //json to array
-        $array = json_decode($jsonfile, true);
-        
-        echo '<table border="1" id="myTable">';
-        echo '<tr><th>STN</th><th>PRCP</th></th></tr>';
-        
-                function sortByPRCP($a, $b) {
-                    return $b['PRCP'] <=> $a['PRCP'];
-                }
-                
-                usort($array, 'sortByPRCP');
-                //print_r($array);
-        
-                $newArray = array_slice($array, 0, 5, true);
-        
-              foreach($newArray as $value) {?>
-                <tr>
-                  <td><?PHP echo $value["STN"]; ?></td>
-                  <td><?PHP echo $value["PRCP"]; ?></td>
-                  </tr>
-              <?php } echo '</table>'?> 
+$dom->xmlVersion = '1.0';
 
+$dom->formatOutput = true;
 
-    </body>
-</html>
+$xml_file_name = 'station_data.xml';
+
+foreach($meting as $waarde){
+
+$root = $dom->createElement('weatherdata');
+
+$station_node = $dom->createElement('measurement');
+
+foreach($waarde as $key => $value){
+    $child_node_date = $dom->createElement($key, $value);
+
+    $station_node->appendChild($child_node_date);
+}
+
+$root->appendChild($station_node);
+
+$dom->appendChild($root);
+}
+
+$dom->save($xml_file_name);
+
+  echo "Data from station " .$_GET['stationnum']." can be downloaded.";
+}
+
+?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form name = "submitknop" method = "get" action="">
+  <label for="stationnum">Station number:</label><br>
+  <input type="text" id="stationnum" name="stationnum"><br>
+  <input type="submit" name="submit" value="Submit"/> <button class="btn"><i class="fa fa-download"></i> Download</button>
+</form>
+
+<a href='station_data.xml' download>
+
