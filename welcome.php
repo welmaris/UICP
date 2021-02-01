@@ -155,7 +155,7 @@ background-color: #1FB062;
 <body>
 
 <div class="topnav">
-   <img src="UIC2.png"> <!--button van maken die naar home page gaat-->
+   <img src="UIC2.png"> 
    <a class="rightSideMenu" href = "logout.php">Sign Out</a>
 </div>
 
@@ -182,14 +182,11 @@ background-color: #1FB062;
                 var station = stations[i];
                 var nr = station[0];
                 var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, "</h3>");
-                
                 pakistan[i] = new mapboxgl.Marker({
                     color: "#f07120"
                 }).setLngLat([station[4], station[3]])
                 .setPopup(new mapboxgl.Popup().setHTML(content))
-                .addTo(map).getElement().addEventListener('click', () =>{
-                    document.getElementById('info').innerHTML = pakistanTable[nr];
-                });
+                .addTo(map);
             }
 
             //Afghanistan
@@ -281,12 +278,12 @@ background-color: #1FB062;
   <a href="#">Link 3</a>
   </div>
 </div>
-
+<!--
 <div class="tableTopFive">
     <?php arrayToTopFive() ?>
     <input type="button" name="download" value="Download">
 </div>
-
+          -->
 <div class="footer"> 
 <p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>
 </div>
