@@ -123,9 +123,7 @@ tr:hover {
         return $string;
     }
 
-    function getAverage($stnnr, $code){
-        // Get all the data
-        $data = getData($stnnr);
+    function getAverage($data, $stnnr, $code){
 
         $array = [];
 
