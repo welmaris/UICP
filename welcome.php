@@ -181,7 +181,7 @@ background-color: #1FB062;
                 
                 var station = stations[i];
                 var nr = station[0];
-                var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, "</h3>");
+                var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", pakistanTable[nr], "</h3>");
                 pakistan[i] = new mapboxgl.Marker({
                     color: "#f07120"
                 }).setLngLat([station[4], station[3]])
@@ -199,7 +199,7 @@ background-color: #1FB062;
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                    var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", afghanistanTable[nr], "</h3>");
                       
                     afghanistan[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -219,7 +219,7 @@ background-color: #1FB062;
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                    var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", iranTable[nr], "</h3>");
 
                     iran[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -239,7 +239,7 @@ background-color: #1FB062;
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                    var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", indiaTable[nr], "</h3>");
 
                     india[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -259,7 +259,7 @@ background-color: #1FB062;
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                    var content = "<h3>".concat(station[1], ", ", station[2], " ", nr, " ", chinaTable[nr], "</h3>");
 
                     china[i] = new mapboxgl.Marker({
                         color: "#1A2364"
