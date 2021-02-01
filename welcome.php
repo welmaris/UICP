@@ -394,14 +394,14 @@ input[type=submit] {
             document.getElementById("defaultOpen").click();
         </script>
 
-<!-- <div class="download">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <form name = "submitknop" method = "get" action="">
+
+<div class="download">
+    <form name = "submitknop" method = "get" action="xmldownload.php">
         <label for="stationnum">Station number:</label><br>
         <input type="text" id="stationnum" name="stationnum"><br>
-        <input type="submit" name="submit" value="Submit"/> 
+        <input type="submit" name="submit" value="Download"/> 
     </form>
-</div> -->
+</div>
 
 <div class="footer"> 
 <p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>
