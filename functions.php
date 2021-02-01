@@ -44,7 +44,7 @@ tr:hover {
         // Directory
         $dir = "../weatherdata-mounting-point/" . $stationnr;
 
-        $data = array();
+        $data = [];
 
         // Looping through Files
         foreach (new DirectoryIterator($dir) as $f){
@@ -68,6 +68,37 @@ tr:hover {
         }
         return ($data);
     }   
+
+    function getDailyData($stationnr, $day){
+
+        // Directory
+        $dir = "../weatherdata-mounting-point/" . $stationnr;
+
+        $data = [];
+
+        // Looping through Files
+        foreach (new DirectoryIterator($dir) as $f){
+            if ($f->isDot()){
+                continue;
+            }
+            
+
+            // get file with filepath
+            $path = $f->getPathname();
+            
+            // Check if file exists
+            if ($f->isFile() and strpos($f, $day) !== false) {
+                $jsonfile = file_get_contents($path);
+                $array = json_decode($jsonfile, true);
+                
+                // Check if it's actually the correct station. (remove if this part gets removed from file)
+                if ($array['stn'] == $stationnr){
+                    array_push($data, $array);
+                }
+            }
+        }
+        return ($data);
+    } 
 
     // Method to get humidity with dewpoint (C) and Temperature (C)
     function getHumidity($dewp, $temp){
@@ -98,42 +129,42 @@ tr:hover {
         }
         $string .= '</table>';
         return $string;
-}
+    }
 
-function getAverage($stnnr, $code){
-    // Get all the data
-    $data = getData($stnnr);
+    function getAverage($stnnr, $code){
+        // Get all the data
+        $data = getData($stnnr);
 
-    $array = [];
+        $array = [];
 
-    // for average humidity
-    if($code == 'humid'){
-        for($i = 0; $i < sizeof($data); $i++){
-            $current = $data[$i];
-            $dewp = $current['dewp'];
-            $temp = $current['temp'];
+        // for average humidity
+        if($code == 'humid'){
+            for($i = 0; $i < sizeof($data); $i++){
+                $current = $data[$i];
+                $dewp = $current['dewp'];
+                $temp = $current['temp'];
 
-            $h = getHumidity($dewp, $temp);
+                $h = getHumidity($dewp, $temp);
 
-            // add humidity 
-            array_push($array, $h);
-        };
-    } else {
-        for($i = 0; $i < sizeof($data); $i++){
-            $current = $data[$i];
-            array_push($array, $current[$code]);
+                // add humidity 
+                array_push($array, $h);
+            };
+        } else {
+            for($i = 0; $i < sizeof($data); $i++){
+                $current = $data[$i];
+                array_push($array, $current[$code]);
+            }
         }
-    }
 
-    // for other averages
-    if (sizeof($array) > 0){
-        $average = round(array_sum($array) / sizeof($array),2);
-    } else {
-        $average = 0;
-    }
+        // for other averages
+        if (sizeof($array) > 0){
+            $average = round(array_sum($array) / sizeof($array),2);
+        } else {
+            $average = 0;
+        }
 
-    return $average;
-}
+        return $average;
+    }
 
     function lastSevenDays(){
         $lastSevenDays = [];
@@ -163,10 +194,6 @@ function getAverage($stnnr, $code){
             arsort($averagePRCP);
         }
 
-        
-
-
-
         //sort array
         $p=1;
         echo "<table>";
@@ -182,6 +209,8 @@ function getAverage($stnnr, $code){
         } 
         echo "</table>";
     }
+
+    // print_r(getDailyData(11520, '2021-01-31'));
 
 ?>  
 </body>
