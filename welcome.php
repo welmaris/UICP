@@ -227,6 +227,54 @@ input[type=submit], {
         width: 100%;
         border-radius: 4px;
     }  
+
+    /* Table */
+    * {box-sizing: border-box}
+    body {font-family: "Lato", sans-serif;}
+
+    /* Style the tab */
+    .tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+    background-color: #ddd;
+    }
+
+    /* Create an active/current "tab button" class */
+    .tab button.active {
+    background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    }
 </style>
 </head>
 <body>
@@ -342,28 +390,53 @@ input[type=submit], {
                 }
             }
 
+            //Top 5 Table
+            function openContent(evt, date) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(date).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+
         </script>
 
-<!-- <div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-    <div class="dropdown-content">
-        <span>Select Dag voor Top 5</span>
-        <div class="dropdown-content">
-            <?php
-                // $days = getWeek();
-                // foreach ($days as $day){
-                //     $select = True;
-                //     $topFive = arrayDailyTopFive($day);
-                //     echo "<options href='#'>$day</options>";
-                // }
-            ?>
-        </div>
-    </div>
-</div> -->
+<div class='Top5'>
+    <div class='tab'>
+        <?php
+            $days = getWeek();
+            $bool = true;
 
-<!-- <<div class="tableTopFive">
-    <?php //echo arrayDailyTopFive(date('Y-m-d')); ?>
-</div> --> -->
+            foreach($days as $day){
+                if($bool){
+                    $bool = false;
+            ?>
+                <button class='tablinks' onclick="openContent(event, '<?php echo $day; ?>')", id='defaultOpen'><?php echo $day; ?></button>
+                <?php }else { ?>
+                
+                    <button class='tablinks' onclick="openContent(event, '<?php echo $day; ?>')"><?php echo $day; ?></button>
+                <?php }
+                
+            }
+        ?>
+    </div>
+    <?php
+        foreach($days as $day){
+            $content = arrayDailyTopFive($day);
+            echo "<div id='$day' class='tabcontent'> $content </div>";
+        }
+    ?>
+    </div>
+</div>
 
 <div class="download">
     <form name = "submitknop" method = "get" action="">
