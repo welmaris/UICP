@@ -259,7 +259,7 @@ background-color: #1FB062;
                 var nr = station[0];
                 var h = humidity[nr];
                 if(h >= 80){
-                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>");
+                    var content = "<h3>".concat(station[1], ", ", station[2], "</h3>", table[nr]);
 
                     china[i] = new mapboxgl.Marker({
                         color: "#1A2364"
@@ -278,13 +278,11 @@ background-color: #1FB062;
   <a href="#">Link 3</a>
   </div>
 </div>
+
 <div class="tableTopFive">
     <?php arrayToTopFive() ?>
     <input type="button" name="download" value="Download">
 </div>
-
-
-
 
 <div class="footer"> 
 <p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>
