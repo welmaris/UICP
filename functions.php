@@ -158,15 +158,9 @@ tr:hover {
         return $average;
     }
 
-    function lastSevenDays(){
-        $lastSevenDays = [];
-        for ($i=0; $i<7; $i++){
-            $day = date("Y-m-d", strtotime($i." days ago"));
-            array_push($lastSevenDays, $day);      
-        }
-        echo '<pre>'; print_r($lastSevenDays); echo '</pre>';
+
+
     }
-    //lastSevenDays();
 
     function arrayToTopFive(){
         $pakistan_Stations = [
@@ -178,13 +172,30 @@ tr:hover {
             [417800,'KARACHI AIRPORT','PAKISTAN',24.9,67.133,22]
         ];
 
+        $lastSevenDays = [];
+        for ($i=0; $i<7; $i++){
+            $day = date("Y-m-d", strtotime($i." days ago"));
+            array_push($lastSevenDays, $day);      
+        }
+        echo '<pre>'; print_r($lastSevenDays); echo '</pre>';
+        }
+
         $averagePRCP = [];
         for($i=0; $i < sizeof($pakistan_Stations); $i++){
             $STN = $pakistan_Stations[$i];
             $stationsnr= $STN[0];
-            $averagePRCP[$stationsnr]=(getAverage($stationsnr, "prcp"));
+            $averagePRCP[$stationsnr]=(getDailyData($stationsnr, "prcp"));
             arsort($averagePRCP);
         }
+
+
+
+
+        for($i = 0; $i < count($); $i++)){
+
+
+
+
 
         //sort array
         $p=1;
