@@ -81,6 +81,7 @@ img.avatar {
 </style>
 
 <head>
+  <link rel="icon" href="/favicon.ico">
 	<title>Login</title>
 </head>
 

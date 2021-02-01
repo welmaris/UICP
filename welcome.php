@@ -6,9 +6,11 @@ include 'stationData.php';
 <html>
 <head>
 
+  <link rel="icon" href="/favicon.ico">
+	<title>Login</title>
         <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
-    </head>
+    
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -156,6 +158,7 @@ background-color: #1FB062;
     
 
 }
+
 
 
 </style>
