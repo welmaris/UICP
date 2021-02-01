@@ -1,48 +1,59 @@
 <?php
 include 'functions.php';
-function getXMLdownload(){
-if (isset($_GET['stationnum'])){
-$dom = new DOMDocument();
-$meting = getData($_GET['stationnum']);
-$dom->encoding = 'utf-8';
+// function getXMLdownload(){
+// if (isset($_GET['stationnum'])){
+// $dom = new DOMDocument();
+// $meting = getData($_GET['stationnum']);
+// $dom->encoding = 'utf-8';
 
-$dom->xmlVersion = '1.0';
+// $dom->xmlVersion = '1.0';
 
-$dom->formatOutput = true;
+// $dom->formatOutput = true;
 
-$xml_file_name = 'station_data.xml';
+// $xml_file_name = 'station_data.xml';
 
-foreach($meting as $waarde){
+// foreach($meting as $waarde){
 
-$root = $dom->createElement('weatherdata');
+// $root = $dom->createElement('weatherdata');
 
-$station_node = $dom->createElement('measurement');
+// $station_node = $dom->createElement('measurement');
 
-foreach($waarde as $key => $value){
-    $child_node_date = $dom->createElement($key, $value);
+// foreach($waarde as $key => $value){
+//     $child_node_date = $dom->createElement($key, $value);
 
-    $station_node->appendChild($child_node_date);
-}
+//     $station_node->appendChild($child_node_date);
+// }
 
-$root->appendChild($station_node);
+// $root->appendChild($station_node);
 
-$dom->appendChild($root);
-}
+// $dom->appendChild($root);
+// }
 
-$dom->save($xml_file_name);
+// $dom->save($xml_file_name);
 
-  echo "Data from station " .$_GET['stationnum']." can be downloaded.";
-}
-}
+// //readfile($xml_file_name);
+// if(file_exists($xml_file_name)) {
+//   header('Content-Description: File Transfer');
+//   header('Content-Type: application/octet-stream');
+//   header('Content-Disposition: attachment; filename="'.basename($xml_file_name).'"');
+//   header('Expires: 0');
+//   header('Cache-Control: must-revalidate');
+//   header('Pragma: public');
+//   header('Content-Length: ' . filesize($xml_file_name));
+//   flush(); // Flush system output buffer
+//   readfile($xml_file_name);
+//   die();
+// }
+// }
+// }
 getXMLdownload();
+
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <form name = "submitknop" method = "get" action="">
   <label for="stationnum">Station number:</label><br>
   <input type="text" id="stationnum" name="stationnum"><br>
-  <input type="submit" name="submit" value="Submit"/> <button class="btn"><i class="fa fa-download"></i> Download</button>
+  <input type="submit" name="submit" value="Submit"/> 
+  <!-- <a href='station_data.xml' download></a> -->
 </form>
-
-<a href='station_data.xml' download>
-
