@@ -16,7 +16,7 @@ include 'stationData.php';
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #eeeff5;
+  background-color: #f7f8fc;
 }
 
 .topnav {
@@ -65,7 +65,63 @@ body {
 .tableTopFive{
   margin-left:30px;
   display: inline-block;
-  margin-bottom: 522px;
+
+}
+
+input[type=button] {
+background-color: #1FB062;
+  color: white;
+  font-weight : bold;
+  font-size : 16px;
+  padding: 5px 8px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropbtn {
+  background-color: #1FB062;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.dropdown {
+
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+    }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
 
 .map{
@@ -214,13 +270,24 @@ body {
             }
 
         </script>
-
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  </div>
+</div>
 <div class="tableTopFive">
     <?php arrayToTopFive() ?>
+    <input type="button" name="download" value="Download">
 </div>
 
+
+
+
 <div class="footer"> 
-<p><small>&copy; Copyright 2021, Storm Metrics Company. All Rights Reserved.</small></p>
+<p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>
 </div>
 
 </body>
