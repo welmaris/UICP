@@ -6,8 +6,8 @@
 table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
+
+    width:100%;
 }
 
 td, th {
@@ -77,18 +77,10 @@ tr:hover {
 
     //Making a table from an array
     function arrayToTable($data){
-        $string =  '<table border="1">';
-        $isHeaderGenerated = 0;
-        foreach($data as $datapunt ){
-            if($isHeaderGenerated == 0){
-                $string .= '<tr>';
-                foreach(array_keys($datapunt) as $key){ 
-                    $string .= "<th>".$key."</th>";
-                }
-                $string .= '</tr>';
-                $isHeaderGenerated = 1;
-                }
+        $string = '<table>';
+        $string .= '<tr><th>Station</th><th>Date</th><th>Time</th><th>Temperature (C&#176;)</th><th>Dewpoint (C&#176;)</th><th>Airpressure (station level)</th><th>Airpressure (sea level)</th><th>Visibility (km)</th><th>Windspeed (km/h)<th>Precipitation (cm)</th><th>Snow Depth (cm)</th><th>Events</th><th>Cloudcover (%)</th><th>Wind direction (degrees)</th></th></tr>';
 
+        foreach($data as $datapunt ){
       //rows
             $string .= '<tr>'; 
                 foreach($datapunt as $key => $value ){
@@ -141,7 +133,7 @@ function getAverage($stnnr, $code){
             $day = date("Y-m-d", strtotime($i." days ago"));
             array_push($lastSevenDays, $day);      
         }
-        //echo '<pre>'; print_r($lastSevenDays); echo '</pre>';
+        echo '<pre>'; print_r($lastSevenDays); echo '</pre>';
     }
     //lastSevenDays();
 
@@ -162,10 +154,6 @@ function getAverage($stnnr, $code){
             $averagePRCP[$stationsnr]=(getAverage($stationsnr, "prcp"));
             arsort($averagePRCP);
         }
-
-        
-
-
 
         //sort array
         $p=1;
