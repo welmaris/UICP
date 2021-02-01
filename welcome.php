@@ -137,6 +137,7 @@ background-color: #1FB062;
     transform:none !important;
     top: 5%;
     left: 10px;
+    height: 500px;
 }
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
@@ -149,6 +150,13 @@ background-color: #1FB062;
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip{
     display:none !important;
 }
+
+.mapboxgl-popup-content{
+    width: min-content;
+    
+
+}
+
 
 </style>
 </head>
