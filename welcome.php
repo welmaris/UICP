@@ -316,19 +316,15 @@ background-color: #1FB062;
             $days = getWeek();
             foreach ($days as $day){
                 $select = True;
-                $topFive = getDailyTopFive($day);
-                if($select){
-                    echo "<a selected='selected' value='strtolower'($day)'>$topFive</a>";
-                }else {
-                    echo "<a value='strtolower'($day)'>$topFive</a>";
-                }
+                $topFive = arrayDailyTopFive($day);
+                echo "<a href='#'>$day</a>";
             }
         ?>
     </div>
 </div>
 
 <div class="tableTopFive">
-    <?php arrayDailyTopFive(date('2021-30-01')); ?>
+    <?php echo arrayDailyTopFive(date('Y-m-d')); ?>
     <input type="button" name="download" value="Download">
 </div>
 

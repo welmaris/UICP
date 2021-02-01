@@ -149,18 +149,19 @@
 
 
         $p=1;
-        echo "<table>";
+        $string = "<table>";
         echo "<tr><th>Position</th><th>Stationnumber</th><th>Average rainfall</th<</tr>";
         foreach ($data as $key => $value) {
             if($p<6){
-                echo "<tr>";
-                echo "<td>".$p++."</td>";
-                echo "<td>".$key."</td>";
-                echo "<td>".$value."</td>";
-                echo "</tr>";
+                $string .= "<tr>";
+                $string .= "<td>".$p++."</td>";
+                $string .= "<td>".$key."</td>";
+                $string .= "<td>".$value."</td>";
+                $string .= "</tr>";
             }
         } 
-        echo "</table>";
+        $string .= "</table>";
+        return $string;
     }
 
     function getWeek(){
