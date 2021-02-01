@@ -1,5 +1,6 @@
 <?php
 include 'functions.php';
+function getXMLdownload(){
 if (isset($_GET['stationnum'])){
 $dom = new DOMDocument();
 $meting = getData($_GET['stationnum']);
@@ -32,7 +33,8 @@ $dom->save($xml_file_name);
 
   echo "Data from station " .$_GET['stationnum']." can be downloaded.";
 }
-
+}
+getXMLdownload();
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
