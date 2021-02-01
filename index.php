@@ -108,7 +108,7 @@ If(isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"])
         $message = "You must enter a password";
     } else {
         $email = $_POST["email"];
-        $password = $_POST["password"];
+        $password = md5($_POST["password"]);
         
         $query = 	"SELECT username
                     FROM accounts
