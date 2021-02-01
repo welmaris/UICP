@@ -158,11 +158,6 @@ background-color: #1FB062;
     padding: 10px;
 }
 
-.fa-download{
-
-
-}
-
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
@@ -369,43 +364,43 @@ input[type=submit], {
 
         </script>
 
-<div class='Top5'>
+<!-- <div class='Top5'>
     <div class='tab'>
         <?php
-            $days = getWeek();
-            $bool = true;
+            //$days = getWeek();
+            //$bool = true;
 
-            foreach($days as $day){
-                if($bool){
-                    $bool = false;
+            //foreach($days as $day){
+                //if($bool){
+                 //   $bool = false;
             ?>
-                <button class='tablinks' onclick="openContent(event, '<?php echo $day; ?>')", id='defaultOpen'><?php echo $day; ?></button>
-                <?php }else { ?>
+                <button class='tablinks' onclick="openContent(event, '<?php //echo $day; ?>')", id='defaultOpen'><?php //echo $day; ?></button>
+                <?php //}else { ?>
                 
-                    <button class='tablinks' onclick="openContent(event, '<?php echo $day; ?>')"><?php echo $day; ?></button>
-                <?php }
+                    <button class='tablinks' onclick="openContent(event, '<?php //echo $day; ?>')"><?php //echo $day; ?></button>
+                <?php //}
 
-            }
+            //}
         ?>
     </div>
     <?php
-        foreach($days as $day){
-            $content = arrayDailyTopFive($day);
-            echo "<div id='$day' class='tabcontent'> $content </div>";
-        }
+        //foreach($days as $day){
+            //$content = arrayDailyTopFive($day);
+            //echo "<div id='$day' class='tabcontent'> $content </div>";
+        //}
     ?>
     </div>
-</div>
+</div> -->
 
-<!-- <div class="download">
+<div class="download">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <form name = "submitknop" method = "get" action="">
-        <?php getXMLdownload() ?>
         <label for="stationnum">Station number:</label><br>
         <input type="text" id="stationnum" name="stationnum"><br>
         <input type="submit" name="submit" value="Submit"/> 
-        <a href='station_data.xml' download><button class="btn">Download</button></a>
     </form>
-</div> -->
+</div>
+
     
 <div class="footer"> 
 <p><small>&copy; <?php echo date("Y");?>, Storm Metrics Company. All Rights Reserved.</small></p>

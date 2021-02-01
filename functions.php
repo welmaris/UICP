@@ -208,13 +208,7 @@ $dom->save($xml_file_name);
 
 //readfile($xml_file_name);
 if(file_exists($xml_file_name)) {
-  header('Content-Description: File Transfer');
-  header('Content-Type: application/octet-stream');
-  header('Content-Disposition: attachment; filename="'.basename($xml_file_name).'"');
-  header('Expires: 0');
-  header('Cache-Control: must-revalidate');
-  header('Pragma: public');
-  header('Content-Length: ' . filesize($xml_file_name));
+  
   flush(); // Flush system output buffer
   readfile($xml_file_name);
   die();
