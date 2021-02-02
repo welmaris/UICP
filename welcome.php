@@ -269,7 +269,11 @@
 <!-- Map -->
     <div class=maptext>
         <h1>Welcome!</h1>
-        <p>The map below shows Pakistan and its neighborting countries. On the map are markers which represent weather</br>stations with a humidity of >80%. The markers of Pakistan are orange, the neighboring countries are blue. When you  press</br>a markera table will pop-up  with all the  weather data of that weather station. The weather data can be downloaded below.</p>
+        <p>The map below shows Pakistan and its neighborting countries. On the map are markers which represent weather
+        </br>stations with a humidity of >80%. The markers of Pakistan are orange, the neighboring countries are blue. When you  press
+        </br>a markera table will pop-up  with all the  weather data of that weather station. The weather data can be downloaded below. 
+        </br>Events is shown in binary. Every digit that is a 1 indicates that the related event happened at the given time. From left to right,
+        </br>each digit inidates the following event: frost, rain, snow, hail, thunder, tornado or whirlwind.</p>
     </div>
     <div class='map' id='map'></div>
             <script>

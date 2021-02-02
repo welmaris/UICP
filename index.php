@@ -118,7 +118,7 @@
                     
             $result_set = mysqli_query($dbConnection, $query);
 
-            if(mysqli_num_rows($result_set) == 1 ){
+            if(mysqli_num_rows($result_set) == 1){
                 $_SESSION["email"] = $email;
                 $_SESSION["password"] = $password;
                 header("location: welcome.php", TRUE, 301);
