@@ -160,7 +160,7 @@
     .download{
         display: inline-block;
         width: 420;
-        margin-left: 260px;
+        margin-left: 265px;
         margin-top: 30px;
         border-radius: 5px;
         background-color: #1FB062;
