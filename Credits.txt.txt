@@ -48,10 +48,15 @@ But everyone worked hard and we mostly worked at the same time in a call.
 SERVER
 
 #Marijn Kok (383955)
-   -Database on the server for password/username --> partly
-
-#Janine Dijkstra (387486)
+  - Database on the server for password/username --> partly
+  - JsonGen
+  - ShoutingMTserver
+  - ShoutingThread
+  - WeatherData
+  - WeatherDataXMLParser
 
 #Tom Beugels (408128)
-
-
+  - JsonGen.java gecodeerd
+  - delen van WeatherData.java gecodeerd
+  - datastructuur bepaald
+  - Aan xmldownload.php gewerkt
