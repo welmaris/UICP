@@ -427,7 +427,7 @@
         <form name = "submitknop" method = "get" action="xmldownload.php">
             <h1>Download data to XML</h1>
             <p>Fill in a station number to download </br> its data in XML format. The data  </br> downloaded is from the last week.</p>
-            <input type="text" id="stationnum" name="stationnum" placeholder="Station number"><br>
+            <input type="text" id="stationnum" name="stationnum" placeholder="Station number" pattern="\d{5,6}" title="Please provide one excisting station number" required><br>
             <input type="submit" name="submit" value="Download"/> 
         </form>
     </div>
