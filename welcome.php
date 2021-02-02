@@ -159,7 +159,6 @@
 /* Download XML function */
     .download{
         display: inline-block;
-        border: 3px solid #f1f1f1;
         width: 420;
         margin-left: 260px;
         margin-top: 30px;
