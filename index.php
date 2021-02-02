@@ -1,9 +1,4 @@
-<?php
-    //echo printheader("Wachtwoord Ophalen");
-    if(!isset($_SESSION["user"])){
-        header("location: /", TRUE, 301);
-    }
-    
+<?php    
     //load libraries
 	require("config.lib.php");
 	require("database.lib.php");
