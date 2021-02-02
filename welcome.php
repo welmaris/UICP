@@ -1,4 +1,9 @@
-<?php include 'stationData.php'; ?>
+<?php
+    if(!isset($_SESSION["user"])){
+        header("location: /", TRUE, 301);
+    }
+    include 'stationData.php'; 
+?>
 
 <!DOCTYPE html>
 <html>
