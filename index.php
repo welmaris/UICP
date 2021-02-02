@@ -1,9 +1,14 @@
 <?php
+    //echo printheader("Wachtwoord Ophalen");
+    if(!isset($_SESSION["user"])){
+        header("location: /", TRUE, 301);
+    }
+    
     //load libraries
 	require("config.lib.php");
 	require("database.lib.php");
 	
-	$dbConnection = databaseConnect(); // Connect to the database
+    $dbConnection = databaseConnect(); // Connect to the database
 ?>
 
 <htmL>
@@ -107,8 +112,8 @@
         } elseif($_POST["password"] == FALSE){
             $message = "You must enter a password";
         } else {
-            $email = $_POST["email"];
-            $password = md5($_POST["password"]);
+            $email = mysqli_real_escape_string($dbConnection, $_POST["email"]);
+            $password = mysqli_real_escape_string($dbConnection, md5($_POST["password"]));
         
             $query = 	"SELECT username
                         FROM accounts

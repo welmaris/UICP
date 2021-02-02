@@ -176,7 +176,6 @@
         box-sizing: border-box;
         font-family: Arial, Helvetica, sans-serif;
         border-radius: 4px;
-        color: white;
     }
 
     input[type=submit] {
