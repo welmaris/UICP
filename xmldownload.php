@@ -1,6 +1,48 @@
 <?php
-include 'functions.php';
+include 'stationData.php';
 if (isset($_GET['stationnum'])){
+$inhoudcheck = false;
+foreach($pakistanStations as $station){
+  if($inhoudcheck){
+    break;
+  }
+  if($station[0]== $_GET['stationnum']){
+    $inhoudcheck = true;
+  }
+}
+foreach($afghanistanStations as $station){
+  if($inhoudcheck){
+    break;
+  }
+  if($station[0]== $_GET['stationnum']){
+    $inhoudcheck = true;
+  }
+}
+foreach($iranStations as $station){
+  if($inhoudcheck){
+    break;
+  }
+  if($station[0]== $_GET['stationnum']){
+    $inhoudcheck = true;
+  }
+}
+foreach($indiaStations as $station){
+  if($inhoudcheck){
+    break;
+  }
+  if($station[0]== $_GET['stationnum']){
+    $inhoudcheck = true;
+  }
+}
+foreach($chinaStations as $station){
+  if($inhoudcheck){
+    break;
+  }
+  if($station[0]== $_GET['stationnum']){
+    $inhoudcheck = true;
+  }
+} 
+if ($inhoudcheck){
 $dom = new DOMDocument();
 $meting = getData($_GET['stationnum']);
 $dom->encoding = 'utf-8';
@@ -41,6 +83,9 @@ if(file_exists($xml_file_name)) {
   flush(); // Flush system output buffer
   readfile($xml_file_name);
   die();
+      
 }
 }
+}
+header("location: welcome.php");
 ?>
